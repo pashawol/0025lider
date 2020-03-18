@@ -1,0 +1,30 @@
+mixin topLine()
+	// start topLine
+	+b.topLine#topLine&attributes(attributes) 
+		.container-fluid
+			.row
+				.col-xll.col-auto.d-none.d-lg-block
+					+e.logo.d-xll-none
+						+e.logo-caption.text-secondary Ремонт и&nbsp;отделка помещений в&nbsp;Нижнем Новгороде
+					.d-none.d-xll-block
+						ul
+							li(v-for="menu in menus" :key="menu.title")
+								a(:href="menu.url" ) {{menu.title}}
+
+				.col.d-xll-none.text-lg-center.text-sm-left.text-center
+					a(href="/")
+						img(src="img/@2x/logo.png", alt="")
+				.col-auto.d-none.d-sm-block
+					+e.A.link--mail(:href="'mailto:'+ email") {{email}}
+				.col-auto.d-none.d-sm-block
+					+e.A.link--tel(:href="'tel:'+ gettel()") {{tel}}
+				.col-auto
+					+e.A.btn.btn-primary(:href="'tel:'+ gettel()")
+						+icon("phone-call") 
+						.d-sm-none {{tel}}
+					.d-sm-none
+						+e.btn.btn-blue(href="#")
+							+icon('builder')
+		.d-none.d-sm-block
+			+soc()
+	// end topLine

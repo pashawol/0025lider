@@ -1,0 +1,16 @@
+mixin headerBlock(img)
+	// start headerBlock
+	+b.headerBlock.section#headerBlock&attributes(attributes)
+		+e.table.bg-wrap
+			img.img-bg.object-fit-js(:src= img, alt="")
+			+e.inner
+				.container
+					block
+					+e.btn(href="#") Рассчитать стоимость
+				my-checkbox(inline-template='')
+					.checkbox-wrapper(@click='check')
+						div(:class='{ checkbox: true, checked: checked }')
+						.title {{ title }}
+		+b.btn-bottom--js
+			+icon("arrow-down")
+	// end headerBlock

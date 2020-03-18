@@ -1,8 +1,14 @@
 extends layout/main.pug
 
 
-include ../blocks/s-content/_s-content.pug
-include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sBenefits/_sBenefits.pug 
+include ../blocks/sEquipment/_sEquipment.pug 
+include ../blocks/sMaterials/_sMaterials.pug 
+include ../blocks/sCases/_sCases.pug 
+include ../blocks/sCalc/_sCalc.pug 
+include ../blocks/aside/_aside.pug 
 
 block variables
 	- let  mainPage= null
@@ -10,11 +16,19 @@ block title
 	- let  title= 'title'
 	title= title
 block pagecontent 
-	+mob-mnu()
-	+header()
-		+top-line()
-		+top-nav()
-	+header-block()
-	+s-form()
-	+s-contact()
+	+mob-mnu
+	+aside() 
+	+topLine()
+	+headerBlock("mainImg")
+		p {{text}}
+		h1(v-html="title") 
+	script.
+		
+	
+	+sBenefits
+	+sEquipment
+	+sMaterials
+	+sCases
+	+sCalc
+	+sContact()
 	+footer()

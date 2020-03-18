@@ -1,0 +1,38 @@
+mixin aside()
+	// start aside
+	+b.ASIDE.aside--js#aside
+		//- .before-loaded
+		+e.inner
+			+b.toggle-menu-mobile--js.d-xll-none
+				span
+			.d-none.d-xll-block
+				+e.logo.d-none.d-xl-block
+					a(href="/")
+						img(src="img/@2x/logo.png", alt="")
+					+e.logo-caption.text-secondary Ремонт и&nbsp;отделка помещений в&nbsp;Нижнем Новгороде
+			.d-sm-none
+				+e.A.link--tel(:href="'tel:'+ gettel()") {{tel}}
+				br
+				+e.A.link--mail(:href="'mailto:'+ email") {{email}}
+			ul
+				li.menu-item(v-for="menu in menus" :key="menu.title")
+					a(:href="menu.url" )
+						.menu-icon
+							img(:src="imgSRc + menu.img", alt="")
+						| {{menu.title}}
+			.d-sm-none
+				+soc()
+			.d-none.d-sm-block
+				+e.btn(href="#")
+					+icon('builder')
+					|  Вызвать замерщика
+
+	+b.toggle-line--js.d-xll-none
+		+b.toggle-menu-mobile--js
+			span
+		+b.toggle-menu-mobile--center.--js
+		
+		+e.btn(href="#")
+			+icon('builder')
+
+	// end aside

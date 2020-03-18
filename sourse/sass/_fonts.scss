@@ -1,13 +1,14 @@
-
-$default-font: "roboto";
+$default-font: "Akzidenz Grotesk Pro";
+$default-font2: "Verbena C";
 // $file-form: ($file-formats: woff2 woff ttf);
 $addr: '../fonts/';
-$file-format: woff2 woff ttf;
+$file-format: woff2;
 
-@include font-face ($default-font, $addr + "Roboto-Regular/Roboto-Regular", $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Bold/Roboto-Bold", bold, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Medium/Roboto-Medium", 500, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Black/Roboto-Black", 900, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "AkzidenzGroteskPro-Regular/AkzidenzGroteskPro-Regular", $file-formats: $file-format);
+@include font-face ($default-font, $addr + "AkzidenzGroteskPro-Bold/AkzidenzGroteskPro-Bold", bold, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "AkzidenzGroteskPro-Md/AkzidenzGroteskPro-Md", 500, $file-formats: $file-format);
+
+@include font-face ($default-font2, $addr + "VerbenaC-Bold/VerbenaC-Bold", $file-formats: $file-format);
 
 // font-weight helper:
 
