@@ -1,0 +1,10 @@
+mixin app()
+	// start app
+	+b.SECTION.app.section#app&attributes(attributes)
+		.container
+			+b.section-title
+				+e.top-title(v-html="subT")
+				h2(v-html="h2") 
+				
+			.row
+	// end app

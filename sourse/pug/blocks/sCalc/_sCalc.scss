@@ -1,13 +1,97 @@
 // start .sCalc
 .sCalc {
 
+
+	&__btn {
+		@extend .btn;
+		@extend .btn-primary;
+		@extend .btn-block;
+	}
+
+	&__block {
+		@include media-breakpoint-up(xxl) {
+
+			padding: rem(83) rem(98);
+		}
+
+		@include media-breakpoint-up(sm) {
+
+			padding: rem(43) rem(45);
+		}
+
+		padding: rem(43) rem(20) rem(10);
+	}
+
+	&__group-title {
+		font-weight: 500;
+		padding-bottom: rem(20);
+	}
+
+	&__col {
+		@include media-breakpoint-up(xl) {
+
+			flex: 0 0 53.5%;
+			max-width: 53.5%;
+		}
+	}
+
+	// .row
+
+	&__row {
+		align-items: center;
+
+		@include media-breakpoint-up(xxl) {
+			// background-color: red;
+			@include roww(76 / 2);
+		}
+	}
+
+	&__total {
+		@extend .h4;
+		font-weight: bold;
+
+		@include media-breakpoint-up(xl) {
+			margin-bottom: 0.5rem;
+		}
+
+		margin-bottom: 2rem;
+
+		input {
+			background: none;
+			border: none;
+			outline: none;
+			// display: inline;
+			font-weight: bold;
+		}
+	}
+
+	&__small {
+		margin-bottom: 1rem;
+		opacity: 0.5;
+		color: #283138;
+		font-size: rem(16px);
+		// font-weight: 400;
+		line-height: 1.63;
+		max-width: rem(470);
+
+		// @include media-breakpoint-up(xxl) {
+		// 	text-align: left;
+		// }
+		@include media-breakpoint-only(xl) {
+
+			text-align: center;
+		}
+	}
+
 	@include media-breakpoint-up(xl) {
-		background-color: red;
+		// background-color: red;
 	}
 
 	@include media-breakpoint-up(lg) {}
 
 	@include media-breakpoint-up(md) {}
+
+
 
 	@include media-breakpoint-up(sm) {}
 
@@ -37,11 +121,76 @@
 
 	@include media-breakpoint-down(md) {}
 
-	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(sm) {
+		&__input {
+			text-align: center;
+		}
+
+		text-align: center;
+
+		&__small {
+			margin-left: auto;
+			margin-right: auto;
+			padding-top: 1rem;
+		}
+	}
 
 	@include media-breakpoint-down(xs) {}
 
 
 }
 
+.irs {
+	// padding-top: rem(10);
+	margin-top: 14px;
+	margin-bottom: rem(50);
+}
+
+.irs--round .irs-line {
+
+	background-color: #a9a9a9;
+}
+
+.irs--round .irs-single:before {
+	border: rem(4) solid transparent;
+	border-top-color: #fff;
+	bottom: rem(-4 * 1.9);
+	margin-left: rem(-4);
+}
+
 // end.sCalc
+.irs--round .irs-single {
+	padding: rem(8) rem(10);
+	top: rem(-8 - 12);
+	box-shadow: 0 10px $h6-font-size rgba(33, 34, 36, 0.15);
+
+}
+
+.irs--round .irs-single {
+	background-color: #fff;
+	font-size: $em-base;
+	color: $body-color;
+
+}
+
+.irs--round .irs-bar {
+	background-color: $primary;
+}
+
+.irs--round .irs-handle {
+	background-color: $primary !important;
+	border-color: $primary;
+	box-shadow: none;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	top: 22px;
+}
+
+.irs--round .irs-min,
+.irs--round .irs-max {
+	background: none;
+	font-size: 1rem;
+	top: rem(60);
+	visibility: visible !important;
+}

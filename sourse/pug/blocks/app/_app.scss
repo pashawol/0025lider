@@ -1,6 +1,6 @@
 
-	// start .s-test
-	.s-test {
+	// start .app
+	.app {
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -26,4 +26,4 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
-} // end.s-test
+} // end.app

@@ -2,8 +2,30 @@ mixin sCalc()
 	// start sCalc
 	+b.SECTION.sCalc.section#sCalc&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sCalc
+			+b.section-title
+				+e.top-title(v-html="subT")
+				h2(v-html="h2") 
 				
-			.row
+			+e.block.item-bg
+				+e.group 
+					+e.group-title Площадь помещения (м2):
+					+e.row.row.range-block
+						+e.col.col-xxl-7.col-xl-8
+								
+								input.slider-range-js(type="text" data-min='10' data-from="500" data-max='1000')
+						.col-xl
+							+e.total  Итого: #[span.range-result-js 23000] рублей 
+				+e.group 
+					+e.group-title Телефон для связи:
+					+e.row.row
+						+e.col.col-xxl-7.col-xl-8
+							.row
+								.col-md-6
+									+input('+7 (___) ___-__-__','tel')
+								.col-md-6
+									+e.INPUT.btn(type="submit" value="Отправить заявку")
+						.col-xxl
+							+e.small Отправив эту форму, я&nbsp;подтверждаю достоверность информации и&nbsp;согласие с&nbsp;условиями передачи данных.
+
+
 	// end sCalc

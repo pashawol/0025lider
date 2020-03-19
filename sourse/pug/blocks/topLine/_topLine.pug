@@ -5,7 +5,7 @@ mixin topLine()
 			.row
 				.col-xll.col-auto.d-none.d-lg-block
 					+e.logo.d-xll-none
-						+e.logo-caption.text-secondary Ремонт и&nbsp;отделка помещений в&nbsp;Нижнем Новгороде
+						+e.logo-caption.text-secondary(v-html="descr")
 					.d-none.d-xll-block
 						ul
 							li(v-for="menu in menus" :key="menu.title")
@@ -17,12 +17,16 @@ mixin topLine()
 				.col-auto.d-none.d-sm-block
 					+e.A.link--mail(:href="'mailto:'+ email") {{email}}
 				.col-auto.d-none.d-sm-block
-					+e.A.link--tel(:href="'tel:'+ gettel()") {{tel}}
+					+e.A.link--tel(:href="'tel:'+ gettel") {{tel}}
 				.col-auto
-					+e.A.btn.btn-primary(:href="'tel:'+ gettel()")
-						+icon("phone-call") 
-						.d-sm-none {{tel}}
+					.d-none.d-sm-block
+						+e.A.btn.btn-primary.link-modal(href="#modal-call" data-title="Заказать звонок" data-btn="Заказать звонок" data-order="Заказать звонок")
+							+icon("phone-call") 
 					.d-sm-none
+						+e.A.btn.btn-primary(:href="'tel:'+ gettel")
+							+icon("phone-call") 
+							| {{tel}}
+					 
 						+e.btn.btn-blue(href="#")
 							+icon('builder')
 		.d-none.d-sm-block

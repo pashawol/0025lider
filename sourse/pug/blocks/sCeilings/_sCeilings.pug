@@ -1,0 +1,19 @@
+mixin sCeilings()
+	// start sCeilings
+	+b.SECTION.sCeilings.section#sCeilings&attributes(attributes)
+		.container
+			+b.section-title
+				+e.top-title(v-html="subT")
+				h2(v-html="h2") 
+				+e.foot-title(v-html="footT")
+			+e.block.item-bg
+				.row
+					.col-md-6
+						+e.img-wrap--lg.bg-wrap( )
+							img.img-bg.object-fit-js(:src="'img/@2x/' + gal", alt="")
+					.col-md-6.align-self-center
+						+e.caption
+							+e.title.item-bg__title(v-html="title")
+							p(v-html="p")
+							+e.btn(href="#") Узнать подробнее
+	// end sCeilings

@@ -2,15 +2,12 @@ mixin headerBlock(img)
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 		+e.table.bg-wrap
-			img.img-bg.object-fit-js(:src= img, alt="")
+			img.img-bg.object-fit-js(:src="mainImg", alt="")
 			+e.inner
 				.container
-					block
-					+e.btn(href="#") Рассчитать стоимость
-				my-checkbox(inline-template='')
-					.checkbox-wrapper(@click='check')
-						div(:class='{ checkbox: true, checked: checked }')
-						.title {{ title }}
+					p {{text}}
+					h1(v-html="title") 
+					+e.btn(href="#") Рассчитать стоимость 
 		+b.btn-bottom--js
 			+icon("arrow-down")
 	// end headerBlock

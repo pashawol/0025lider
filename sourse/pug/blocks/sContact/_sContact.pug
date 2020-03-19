@@ -2,8 +2,23 @@ mixin sContact()
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContact
-				
+			+b.section-title
+				+e.top-title(v-html="subT")
+				h2
+					a(:href="tel0" v-html="h2") 
 			.row
+				.col-md-6
+					+e.map#map
+					<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" ></script>
+			 
+				.col-md-6
+					+e.caption.item-bg
+						+e.title.item-bg__title(v-html="title")
+						p #[strong Адрес:] {{addr}}
+
+
+						p  #[strong Режим работы:] {{timer}}
+						+e.btn(href="#")
+							+icon("pdf")
+							| Карточка партнера
 	// end sContact

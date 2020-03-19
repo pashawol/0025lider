@@ -1,9 +1,36 @@
 mixin sMaterials()
 	// start sMaterials
-	+b.SECTION.sMaterials.section#sMaterials&attributes(attributes)
+	+b.SECTION.section-with-slider.section.section--with-slider#sMaterials&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sMaterials
-				
-			.row
+			+b.section-title
+				+e.top-title(v-html="subT")
+				+e.h2-wrap
+					h2(v-html="h2")  
+					.swiper-pagination
+			.slider-wrapper
+				+e.slider.slider-js.swiper-container
+					.swiper-wrapper
+						+e.slide.swiper-slide(v-for="item in items" :key="item.title")
+							+e.item.item-bg
+								+e.row.row
+									+e.col.col-lg-7.col-xl-8
+										+e.title.item-bg__title(v-html="item.title")
+										//- .row
+										.row.justify-content-center
+											//- .col-4(v-for="list in item.lists" v-if="list.length > 3")
+											template(v-if="item.lists.length > 3") 
+												.col-6(v-for="list in item.lists" ): +e.list-item
+													+e.list-img
+														img.res-i.swiper-lazy(src="#" :data-src="list.img", alt=""  )
+													+e.text(v-html="list.text") 
+										
+											template(v-else)
+												.col-md-12.col-6(v-for="list in item.lists" ): +e.list-item
+													+e.list-img
+														img.res-i.swiper-lazy(src="#" :data-src="list.img", alt=""  )
+													+e.text(v-html="list.text") 
+										
+									+e.col.col-md.align-center
+										img.img-abs.res-i.swiper-lazy(src="#" :data-src="item.img", alt=""  )
+					+arrow()
 	// end sMaterials

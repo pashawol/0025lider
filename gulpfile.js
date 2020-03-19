@@ -17,9 +17,8 @@ global.$ = {
 	postcss: require('gulp-postcss'),
 	cssnano: require('cssnano'),
 	nested: require('postcss-nested'),
-	autoprefixer: require('autoprefixer'),
-	cssvars: require('postcss-simple-vars'),
-	cssImport: require('postcss-import'),
+	pcmq: require('postcss-combine-media-query'),
+	assets: require('postcss-assets'),
 	path: {
 		tasks: require('./gulp/config/tasks.js'),
 	},

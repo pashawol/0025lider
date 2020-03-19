@@ -1,9 +1,22 @@
 mixin sEquipment()
 	// start sEquipment
-	+b.SECTION.sEquipment.section#sEquipment&attributes(attributes)
+	+b.SECTION.section-with-slider.section.section--with-slider#sEquipment&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sEquipment
-				
-			.row
+			+b.section-title
+				+e.top-title(v-html="subT")
+				+e.h2-wrap
+					h2(v-html="h2")  
+					.swiper-pagination
+			.slider-wrapper
+				+e.slider.slider-js.swiper-container
+					.swiper-wrapper
+						+e.slide.swiper-slide(v-for="item in items" :key="item.title")
+							+e.item.item-bg
+								+e.row.row
+									+e.col.col-md-6
+										+e.title.item-bg__title(v-html="item.title")
+										p(v-html="item.p")
+									+e.col.col-md-6.align-center
+										img.img-abs.res-i.swiper-lazy(src="#" :data-src="item.img", alt=""  )
+					+arrow()
 	// end sEquipment

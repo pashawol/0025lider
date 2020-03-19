@@ -45,10 +45,10 @@
     "gulp-tabify": "0.0.2",
     "gulp-uglify": "^3.0.2",
     "postcss": "^7.0.27",
+    "postcss-assets": "^5.0.0",
+    "postcss-combine-media-query": "^1.0.1",
     "postcss-extract-media-query": "^2.0.0",
-    "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.1",
-    "postcss-simple-vars": "^5.0.2",
     "sugarss": "^2.0.0"
   },
   "optionalDependencies": {},

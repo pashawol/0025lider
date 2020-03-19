@@ -2,8 +2,9 @@ mixin sForm()
 	// start sForm
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sForm
+			+b.section-title
+				+e.top-title(v-html="subT")
+				h2(v-html="h2") 
 				
 			.row
 	// end sForm

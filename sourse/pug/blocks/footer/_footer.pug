@@ -1,4 +1,7 @@
 mixin footer()
-	+b.FOOTER.footer.block-with-lazy
+	+b.FOOTER.footer#footer
 		.container
-			h2 footer
+			.row
+				+e.col.col {{setCopy}}
+				+e.col.col-auto
+					a(href="#") Политика конфиденциальности

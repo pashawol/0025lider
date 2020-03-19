@@ -1,9 +1,10 @@
+
 let asideVue = new Vue({
 	el: '#aside',
 	data: {
-		imgSRc: 'img/',
-		email: 'info@lpsplus.ru',
-		tel: '8 (831) 410-40-60',
+		imgSRc: app.imgSRc,
+		email: app.email,
+		tel: app.tel,
 		menus: [
 			{
 				title: "Механизированая штукатурка", url: "#", img: `svg/construction-and-tools.svg`
@@ -19,20 +20,17 @@ let asideVue = new Vue({
 			},
 		],
 		// socs: topLineVue.socs
-		socs: [
-			{ text: "Фейсбук", title: "fb", url: "#" },
-			{ text: "ВКонтакте", title: "vk", url: "#" },
-			{ text: "Инстаграм", title: "instagram", url: "#" },
-		]
+		socs: app.socs,
+		descr: app.descr
 	},
 	methods: {
-		gettel() {
-			return this.tel.replace(/\s/g, '');
-		}
 	},
 	created: function () {
 	},
 	computed: {
+		gettel() {
+			app.gettel;
+		}
 
 	},
 })

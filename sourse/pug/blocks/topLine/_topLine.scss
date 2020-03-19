@@ -15,7 +15,8 @@
 
 	@include media-breakpoint-up(sm) {
 
-		z-index: 10;
+		// z-index: 10;
+		z-index: 200;
 	}
 
 	z-index: 1005;

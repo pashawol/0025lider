@@ -31,6 +31,12 @@
 
  		}
 
+ 		@media (max-height: 520px) {
+ 			span {
+ 				display: none !important;
+ 			}
+ 		}
+
  		text-decoration: none !important;
  		vertical-align: middle;
 

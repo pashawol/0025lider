@@ -9,9 +9,9 @@ mixin aside()
 				+e.logo.d-none.d-xl-block
 					a(href="/")
 						img(src="img/@2x/logo.png", alt="")
-					+e.logo-caption.text-secondary Ремонт и&nbsp;отделка помещений в&nbsp;Нижнем Новгороде
+					+e.logo-caption.text-secondary(v-html="descr")
 			.d-sm-none
-				+e.A.link--tel(:href="'tel:'+ gettel()") {{tel}}
+				+e.A.link--tel(:href="'tel:'+ gettel") {{tel}}
 				br
 				+e.A.link--mail(:href="'mailto:'+ email") {{email}}
 			ul
@@ -23,7 +23,7 @@ mixin aside()
 			.d-sm-none
 				+soc()
 			.d-none.d-sm-block
-				+e.btn(href="#")
+				+e.btn.link-modal(href="#modal-call" data-title="Вызвать замерщика" data-btn="Вызвать замерщика" data-order="Вызвать замерщика")
 					+icon('builder')
 					|  Вызвать замерщика
 

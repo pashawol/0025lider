@@ -2,8 +2,8 @@ let topLineVue = new Vue({
 	el: '#topLine',
 	data: {
 		imgSRc: 'img/',
-		email: 'info@lpsplus.ru',
-		tel: '8 (831) 410-40-60',
+		email: app.email,
+		tel: app.tel,
 		menus: [
 			{ title: "Главная", url: "#" },
 			{ title: "Ваши выгоды", url: "#" },
@@ -13,20 +13,16 @@ let topLineVue = new Vue({
 			{ title: "Калькулятор", url: "#" },
 			{ title: "Контакты", url: "#" },
 		],
-		socs: [
-			{ text: "Фейсбук", title: "fb", url: "#" },
-			{ text: "ВКонтакте", title: "vk", url: "#" },
-			{ text: "Инстаграм", title: "instagram", url: "#" },
-		]
+		socs: app.socs,
+		descr: app.descr
 	},
 	methods: {
-		gettel() {
-			return this.tel.replace(/\s/g, '');
-		}
 	},
 	created: function () {
 	},
 	computed: {
-
+		gettel() {
+			return app.gettel;
+		}
 	},
 })

@@ -7,6 +7,7 @@ include ../blocks/sBenefits/_sBenefits.pug
 include ../blocks/sEquipment/_sEquipment.pug 
 include ../blocks/sMaterials/_sMaterials.pug 
 include ../blocks/sCases/_sCases.pug 
+include ../blocks/sCeilings/_sCeilings.pug 
 include ../blocks/sCalc/_sCalc.pug 
 include ../blocks/aside/_aside.pug 
 
@@ -19,10 +20,10 @@ block pagecontent
 	+mob-mnu
 	+aside() 
 	+topLine()
-	+headerBlock("mainImg")
-		p {{text}}
-		h1(v-html="title") 
-	script.
+	+headerBlock()
+	//- 	p {{text}}
+	//- 	h1(v-html="title") 
+	//- script.
 		
 	
 	+sBenefits
@@ -30,5 +31,6 @@ block pagecontent
 	+sMaterials
 	+sCases
 	+sCalc
+	+sCeilings
 	+sContact()
 	+footer()

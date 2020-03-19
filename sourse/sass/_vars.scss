@@ -109,9 +109,9 @@ $container-max-widths: (xs: 440px,
   sm: 540px,
   md: 720px,
   lg: (960px - 100px),
-  xl: (1140px - 200px),
-  xll: (1140px - 80px),
-  xxl: 1476px) !default;
+  xl: (1140px - 80px),
+  // xll: (1140px - 80px),
+  xxl: 1436px) !default;
 // Grid columns
 //
 // Set the number of columns and specify the width of the gutters.
@@ -245,7 +245,7 @@ $input-btn-padding-x-lg: 1rem !default;
 $input-btn-font-size-lg: $font-size-lg !default;
 // $input-btn-line-height-lg:    $line-height-lg !default;
 
-// $input-btn-border-width:      $border-width !default;
+$input-btn-border-width: rem(2) !default;
 
 
 // Buttons

@@ -2,8 +2,13 @@ mixin sBenefits()
 	// start sBenefits
 	+b.SECTION.sBenefits.section#sBenefits&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sBenefits
-				
+			+b.section-title
+				+e.top-title(v-html="subT")
+				h2(v-html="h2") 
 			.row
+				+e.col.col-md-6(v-for="item in items" :key="item.title")
+					+e.item
+						+e.title(v-html="item.title")
+						p(v-html="item.p")
+						img.res-i(:src="item.img", alt="" :style="item.style")
 	// end sBenefits
