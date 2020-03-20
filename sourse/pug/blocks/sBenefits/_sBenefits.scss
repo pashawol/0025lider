@@ -1,7 +1,7 @@
 // start .sBenefits
 .sBenefits {
 	&__col {
-		margin-bottom: rem(30);
+		margin-bottom: 30px;
 	}
 
 	&__item {
@@ -104,7 +104,7 @@
 	p {
 
 
-		@include media-breakpoint-up(xl) {
+		@include media-breakpoint-up(xll) {
 			max-width: rem(340);
 			margin-left: 0;
 
@@ -115,7 +115,8 @@
 
 			// padding-right: rem(120);
 			max-width: none;
-			max-width: none;
+			margin-left: 0;
+			max-width: rem(260);
 		}
 
 		margin-left: auto;

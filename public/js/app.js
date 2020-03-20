@@ -29,19 +29,6 @@ var app = new Vue({
 		}
 	}
 });
-var footerVue = new Vue({
-	el: '#footer',
-	data: {// copy:
-	},
-	created: function created() {},
-	computed: {
-		setCopy: function setCopy() {
-			var now = new Date();
-			return "\xA9 ".concat(now.getFullYear(), " \xAB\u041B\u0438\u0434\u0435\u0440 \u041F\u0440\u043E\u0444\u0441\u0442\u0440\u043E\u0439\xBB.");
-		}
-	}
-}); // .footer scripts goes here
-
 var asideVue = new Vue({
 	el: '#aside',
 	data: {
@@ -77,6 +64,21 @@ var asideVue = new Vue({
 		}
 	}
 });
+var footerVue = new Vue({
+	el: '#footer',
+	data: {
+		// copy:
+		socs: app.socs
+	},
+	created: function created() {},
+	computed: {
+		setCopy: function setCopy() {
+			var now = new Date();
+			return "\xA9 ".concat(now.getFullYear(), " \xAB\u041B\u0438\u0434\u0435\u0440 \u041F\u0440\u043E\u0444\u0441\u0442\u0440\u043E\u0439\xBB.");
+		}
+	}
+}); // .footer scripts goes here
+
 var header = new Vue({
 	el: '#header',
 	data: {
@@ -84,56 +86,16 @@ var header = new Vue({
 	},
 	created: function created() {},
 	computed: {}
-});
-var headerBlockVue = new Vue({
-	el: '#headerBlock',
-	data: {
-		imgSRc: 'img/',
-		mainImg: 'img/@2x/head-1.jpg',
-		text: 'Равномерное покрытие за 3 дня',
-		title: '<strong>Механизированная шпатлевка помещений от&nbsp;130&nbsp;руб/м2</strong> в&nbsp;Нижнем Новгороде'
-	},
-	methods: {}
-});
-var sBenefitsVue = new Vue({
-	el: '#sBenefits',
-	data: {
-		imgSRc: 'img/',
-		subT: ' Почему клиенты выбирают нас?',
-		h2: 'Ваши выгоды при работе с&nbsp;нами',
-		items: [{
-			title: "От&nbsp;3&nbsp;дней <br> точно в&nbsp; срок",
-			p: 'Технология и&nbsp;опыт позволяют выполнять объемы до&nbsp; 500 м2 &nbsp; точно в&nbsp; срок.',
-			img: "img/@2x/sBenefits-1.png",
-			style: 'width: 10.77778rem;'
-		}, {
-			title: "Высокое качество готовой поверхности",
-			p: 'Не&nbsp;требует дальнейшей обработки за&nbsp; счет увеличения адгезии между поверхностью и&nbsp; раствором.',
-			img: "img/@2x/sBenefits-2.png"
-		}, {
-			title: "Высокое качество используемого раствора",
-			p: 'За&nbsp;счет механического смешивания компонентов.',
-			img: "img/@2x/sBenefits-3.png",
-			style: "right:0; bottom: 2rem; margin-right: 0"
-		}, {
-			title: "Экономный расход шпаклевочной смеси",
-			p: 'А&nbsp;также выгодная цена шпатлевки от&nbsp; 130&nbsp; руб/ м2.',
-			img: "img/@2x/sBenefits-4.png"
-		}]
-	},
-	created: function created() {},
-	computed: {}
-});
-var sCalcVue = new Vue({
-	el: '#sCalc',
-	data: {
-		imgSRc: 'img/',
-		subT: 'Узнайте стоимость работ',
-		h2: "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0439\u0442\u0435 \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C  <br> \u043C\u0435\u0445\u0430\u043D\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u043E\u0439 \u0448\u043F\u0430\u0442\u043B\u0435\u0432\u043A\u0438"
-	},
-	created: function created() {},
-	computed: {}
-});
+}); // let headerBlockVue = new Vue({
+//   el: '#headerBlock',
+//   data: {
+//     imgSRc: 'img/',
+//     mainImg: 'img/@2x/head-1.jpg',
+//     text: 'Равномерное покрытие за 3 дня',
+//     title: '<strong>Механизированная шпатлевка помещений от&nbsp;130&nbsp;руб/м2</strong> в&nbsp;Нижнем Новгороде'
+//   },
+// })
+
 var sCasesVue = new Vue({
 	el: '#sCases',
 	data: {
@@ -178,6 +140,50 @@ var sContactVue = new Vue({
 		timer: "\u041F\u043D-\u043F\u0442: 8:00-19:00; \u0421\u0431-\u0432\u0441: \u0432\u044B\u0445\u043E\u0434\u043D\u043E\u0439",
 		title: "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u043D\u0430\u044F \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F"
 	},
+	created: function created() {},
+	computed: {}
+});
+var sDifferenceVue = new Vue({
+	el: '#sDifference',
+	data: {
+		imgSRc: 'img/',
+		subT: 'Сравните качество материала',
+		h2: "\u041E\u0442\u043B\u0438\u0447\u0438\u0435 \u043F\u043E\u043B\u0443\u0441\u0443\u0445\u043E\u0439 \u0441\u0442\u044F\u0436\u043A\u0438 \u043E\u0442&nbsp;\u043E\u0431\u044B\u0447\u043D\u043E\u0439",
+		items: [{
+			title: "\u041E\u0431\u044A\u0435\u043C \u0440\u0430\u0431\u043E\u0442 \u0432 \u0434\u0435\u043D\u044C",
+			t2: "\u0434\u043E 50 \u043C2",
+			t3: "\u0434\u043E 200 \u043C2"
+		}, {
+			title: "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435 \u0432\u044B\u0440\u0430\u0432\u043D\u0438\u0432\u0430\u043D\u0438\u0435",
+			t2: "\u0434\u0430",
+			t3: "\u043D\u0435\u0442"
+		}, {
+			title: "\u041F\u0435\u0448\u0438\u0435 \u043D\u0430\u0433\u0440\u0443\u0437\u043A\u0438",
+			t2: "\u0447\u0435\u0440\u0435\u0437 72 \u0447\u0430\u0441\u0430",
+			t3: "\u0447\u0435\u0440\u0435\u0437 12 \u0447\u0430\u0441\u043E\u0432"
+		}, {
+			title: "\u041E\u0442\u0434\u0435\u043B\u043E\u0447\u043D\u044B\u0435 \u0440\u0430\u0431\u043E\u0442\u044B",
+			t2: "\u0447\u0435\u0440\u0435\u0437 72 \u0447\u0430\u0441\u0430",
+			t3: "\u043D\u0430 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u0434\u0435\u043D\u044C"
+		}, {
+			title: "\u0414\u043E\u043F\u0443\u0441\u0442\u0438\u043C\u044B\u0435 \u043F\u0435\u0440\u0435\u043F\u0430\u0434\u044B",
+			t2: "10 \u043C\u043C",
+			t3: "2 \u043C\u043C"
+		}, {
+			title: "\u041F\u043E\u0442\u0440\u0435\u0431\u043B\u0435\u043D\u0438\u0435 \u0432\u043E\u0434\u044B",
+			t2: "\u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0435",
+			t3: "\u043C\u0438\u043D\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0435"
+		}, {
+			title: "\u041F\u0440\u043E\u0442\u0435\u0447\u043A\u0438 \u043F\u0440\u0438 \u0437\u0430\u043B\u0438\u0432\u043A\u0435",
+			t2: "\u0434\u0430",
+			t3: "\u043D\u0435\u0442"
+		}, {
+			title: "\u042D\u043B\u0435\u043C\u0435\u043D\u0442 \u0430\u0440\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F",
+			t2: "\u0441\u0435\u0442\u043A\u0430",
+			t3: "\u0444\u0438\u0431\u0440\u0430\u0432\u043E\u043B\u043E\u043A\u043D\u043E"
+		}]
+	},
+	methods: {},
 	created: function created() {},
 	computed: {}
 });
@@ -278,6 +284,42 @@ var sMaterialsVue = new Vue({
 			}]
 		}]
 	},
+	created: function created() {},
+	computed: {}
+});
+var sProcessVue = new Vue({
+	el: '#sProcess',
+	data: {
+		imgSRc: 'img/',
+		subT: 'Этапы работы',
+		h2: 'Процесс полусухой стяжки пола',
+		items: [{
+			img: "img/@2x/process-1.jpg",
+			title: "\u0423\u043A\u043B\u0430\u0434\u043A\u0430 \u041F\u0412\u0425 \u043F\u043B\u0435\u043D\u043A\u0438",
+			p: "\u0423\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u043E \u0440\u0430\u0437\u0434\u0435\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0433\u043E \u0441\u043B\u043E\u044F: \u043F\u043B\u0435\u043D\u043A\u0430, \u0448\u0443\u043C\u043E\u0438\u0437\u043E\u043B\u044F\u0446\u0438\u044F \u0438&nbsp;\u0443\u0442\u0435\u043F\u043B\u0438\u0442\u0435\u043B\u044C."
+		}, {
+			img: "img/@2x/process-2.jpg",
+			title: "\u041F\u043E\u0434\u0430\u0447\u0430 \u0441\u043C\u0435\u0441\u0438",
+			p: "\u041F\u0440\u0438\u0433\u043E\u0442\u043E\u0432\u043B\u0435\u043D\u0438\u0435 \u0438&nbsp;\u043F\u043E\u0434\u0430\u0447\u0430 \u0441\u043C\u0435\u0441\u0438 \u0441&nbsp;\u043F\u043E\u043C\u043E\u0449\u044C\u044E \u043F\u043D\u0435\u0432\u043C\u043E\u043D\u0430\u0433\u043D\u0435\u0442\u0430\u0442\u0435\u043B\u044F."
+		}, {
+			img: "img/@2x/process-3.jpg",
+			title: "\u0412\u044B\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043C\u0430\u044F\u043A\u043E\u0432",
+			p: "\u0412\u044B\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043C\u0430\u044F\u043A\u043E\u0432 \u0438\u0437&nbsp;\u043F\u043E\u043B\u0443\u0441\u0443\u0445\u043E\u0433\u043E \u0440\u0430\u0441\u0442\u0432\u043E\u0440\u0430 \u043F\u043E&nbsp;\u043B\u0430\u0437\u0435\u0440\u043D\u043E\u043C\u0443 \u043D\u0438\u0432\u0435\u043B\u0438\u0440\u0443."
+		}, {
+			img: "img/@2x/process-4.jpg",
+			title: "\u0420\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u0438\u0435 \u0441\u0442\u044F\u0436\u043A\u0438",
+			p: "\u0420\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u0438\u0435 \u0441\u0442\u044F\u0436\u043A\u0438 \u043C\u0435\u0436\u0434\u0443 \u043C\u0430\u044F\u043A\u0430\u043C\u0438 \u0441&nbsp;\u043F\u043E\u043C\u043E\u0449\u044C\u044E \u043F\u0440\u044F\u043C\u043E\u0443\u0433\u043E\u043B\u044C\u043D\u043E\u0433\u043E \u043F\u0440\u0430\u0432\u0438\u043B\u0430."
+		}, {
+			img: "img/@2x/process-5.jpg",
+			title: "\u0423\u043F\u043B\u043E\u0442\u043D\u0435\u043D\u0438\u0435 \u0438 \u0437\u0430\u0442\u0438\u0440\u043A\u0430",
+			p: "\u0423\u043F\u043B\u043E\u0442\u043D\u0435\u043D\u0438\u0435 \u0438&nbsp;\u0437\u0430\u0442\u0438\u0440\u043A\u0430 &laquo;\u0432\u0435\u0440\u0442\u043E\u043B\u0435\u0442\u043E\u043C&raquo; \u043F\u043E\u0434 \u0444\u0438\u043D\u0438\u0448\u043D\u043E\u0435 \u043F\u043E\u043A\u0440\u044B\u0442\u0438\u0435."
+		}, {
+			img: "img/@2x/process-6.jpg",
+			title: "\u041F\u043E\u043A\u0440\u044B\u0442\u0438\u0435 \u043F\u043B\u0435\u043D\u043A\u043E\u0439",
+			p: "\u041F\u043E\u043A\u0440\u044B\u0442\u0438\u0435 \u043F\u043B\u0435\u043D\u043A\u043E\u0439 \u0433\u043E\u0442\u043E\u0432\u043E\u0439 \u0441\u0442\u044F\u0436\u043A\u0438 \u0434\u043B\u044F \u043D\u0430\u0431\u043E\u0440\u0430 \u043C\u0430\u0440\u043E\u0447\u043D\u043E\u0439 \u043F\u0440\u043E\u0447\u043D\u043E\u0441\u0442\u0438."
+		}]
+	},
+	methods: {},
 	created: function created() {},
 	computed: {}
 });

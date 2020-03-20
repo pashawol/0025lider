@@ -1,0 +1,22 @@
+mixin sDifference()
+	// start sDifference
+	+b.SECTION.sDifference.section#sDifference&attributes(attributes)
+		.container
+			+b.section-title
+				+e.top-title(v-html="subT")
+				h2(v-html="h2") 
+				
+			table
+				thead
+					tr
+						th(scope="col")
+						th(scope="col") Обычная стяжка
+						th(scope="col") Полусухая стяжка
+				tbody
+					tr(v-for="item in items" :key="item.title")
+						th(scope="row" v-html="item.title") 
+						td.text-secondary(v-html="item.t2" title='Обычная стяжка') 
+						td(v-html="item.t3" title="Полусухая стяжка") 
+
+
+	// end sDifference

@@ -1,0 +1,97 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sBenefits/_sBenefits.pug 
+include ../blocks/sEquipment/_sEquipment.pug 
+include ../blocks/sMaterials/_sMaterials.pug 
+include ../blocks/sCases/_sCases.pug 
+include ../blocks/sCeilings/_sCeilings.pug 
+include ../blocks/sCalc/_sCalc.pug 
+include ../blocks/aside/_aside.pug 
+include ../blocks/sProcess/_sProcess.pug 
+include ../blocks/sDifference/_sDifference.pug 
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Полусухая стяжка пола'
+	title= title
+block pagecontent 
+	+mob-mnu
+	+aside() 
+	+topLine()
+	+headerBlock
+	script.
+		let headerBlockVue = new Vue({
+			el: '#headerBlock',
+			data: {
+				imgSRc: 'img/',
+				mainImg: 'img/@2x/head-2.jpg',
+				text: 'Идеально ровный пол за 1 день!',
+				title: `<strong>Полусухая стяжка пола от&nbsp;250&nbsp;руб/м2 </strong> в&nbsp;Нижнем Новгороде`
+			},
+		})
+		
+	
+	+sBenefits
+	script.
+			let sBenefitsVue = new Vue({
+			el: '#sBenefits',
+			data: {
+				imgSRc: 'img/',
+				subT: ' Почему клиенты выбирают нас?',
+				h2: 'Ваши выгоды при работе с&nbsp;нами',
+				items: [
+					{
+						title: "12 часов",
+						p: `Уже через 12&nbsp;часов по&nbsp;полу <br> можно ходить.`, img: `img/@2x/sBenefits-1.png`,
+						style: 'width: 10.77778rem;right:2rem;'
+					},
+					{
+						title: `Без шума и&nbsp;пыли`,
+						p:  `Без шума, пыли и&nbsp;грязи в&nbsp;подъеде и&nbsp;помещении!`,
+						img: `img/@2x/sBenefits-2-2.png`,
+						style: "right:-2rem; bottom: 4rem; margin-right: 0"
+					},
+					{
+						title: "Немецкая технология",
+						p: `Проверенное качество производства Германия&nbsp;&mdash; Putzmeister!`,
+						img: `img/@2x/sBenefits-2-3.png`,
+						style: " bottom: 2rem;"
+					},
+
+					{
+						title: "Идеально ровно",
+						p: `Не&nbsp;требует дополнительного выравнивания наливным полом.`,
+						img: `img/@2x/sBenefits-2-4.png`,
+						style: "right:0;bottom: 4rem;"
+					},
+
+				]
+			},
+		})
+	+sEquipment
+	+sProcess
+	+sDifference
+	//- +sMaterials
+	+sCases
+	+sCalc
+	script.
+		let sCalcVue = new Vue({
+			el: '#sCalc',
+			data: {
+				imgSRc: 'img/',
+				subT: 'Узнайте стоимость работ',
+				h2: `Рассчитайте стоимость  <br> стяжки пола`,
+			},
+			created: function () {
+			},
+			computed: {
+
+			},
+		})
+	+sCeilings
+	+sContact()
+	+footer()

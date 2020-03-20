@@ -1,7 +1,10 @@
 mixin footer()
 	+b.FOOTER.footer#footer
 		.container
+
 			.row
+				+e.col.col-12.d-md-none 
+					+soc()
 				+e.col.col {{setCopy}}
-				+e.col.col-auto
+				+e.col.col-sm-auto
 					a(href="#") Политика конфиденциальности

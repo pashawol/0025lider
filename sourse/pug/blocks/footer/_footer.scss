@@ -56,5 +56,8 @@
 
   @include media-breakpoint-down(sm) {}
 
-  @include media-breakpoint-down(xs) {}
+  @include media-breakpoint-down(xs) {
+    margin-bottom: 50px;
+    text-align: center;
+  }
 }

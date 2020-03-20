@@ -2,6 +2,7 @@ let footerVue = new Vue({
   el: '#footer',
   data: {
     // copy:
+    socs: app.socs,
   },
   created: function () {
   },

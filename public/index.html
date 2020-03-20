@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>title</title>
+		<title>Механизированная шпатлевка</title>
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
@@ -150,7 +150,7 @@
 				<div class="headerBlock__table bg-wrap"><img class="img-bg object-fit-js" :src="mainImg" alt=""/>
 					<div class="headerBlock__inner">
 						<div class="container">
-							<p>{{text}}</p>
+							<p> {{text}}</p>
 							<h1 v-html="title"> </h1><a class="headerBlock__btn" href="#">Рассчитать стоимость </a>
 						</div>
 					</div>
@@ -162,6 +162,19 @@
 				</div>
 			</div>
 			<!-- end headerBlock-->
+			<script>
+				let headerBlockVue = new Vue({
+					el: '#headerBlock',
+					data: {
+						imgSRc: 'img/',
+						mainImg: 'img/@2x/head-1.jpg',
+						text: 'Равномерное покрытие за 3 дня',
+						title: `<strong>Механизированная шпатлевка помещений от&nbsp;130&nbsp;руб/м2</strong> в&nbsp;Нижнем Новгороде`
+					},
+				})
+				
+				
+			</script>
 			<!-- start sBenefits-->
 			<section class="sBenefits section" id="sBenefits">
 				<div class="container">
@@ -182,6 +195,42 @@
 				</div>
 			</section>
 			<!-- end sBenefits-->
+			<script>
+					let sBenefitsVue = new Vue({
+					el: '#sBenefits',
+					data: {
+						imgSRc: 'img/',
+						subT: ' Почему клиенты выбирают нас?',
+						h2: 'Ваши выгоды при работе с&nbsp;нами',
+						items: [
+							{
+								title: `От&nbsp;3&nbsp;дней <br> точно в&nbsp; срок`,
+								p: `Технология и&nbsp;опыт позволяют выполнять объемы до&nbsp; 500 м2 &nbsp; точно в&nbsp; срок.`, img: `img/@2x/sBenefits-1.png`,
+								style: 'width: 10.77778rem;'
+							},
+							{
+								title: `Высокое качество готовой поверхности`,
+								p: `Не&nbsp;требует дальнейшей обработки за&nbsp; счет увеличения адгезии между поверхностью и&nbsp; раствором.`,
+								img: `img/@2x/sBenefits-2.png`
+							},
+							{
+								title: `Высокое качество используемого раствора`,
+								p: `За&nbsp;счет механического смешивания компонентов.`,
+								img: `img/@2x/sBenefits-3.png`,
+								style: "right:0; bottom: 2rem; margin-right: 0"
+							},
+				
+							{
+								title: "Экономный расход шпаклевочной смеси",
+								p: `А&nbsp;также выгодная цена шпатлевки от&nbsp; 130&nbsp; руб/ м2.`,
+								img: `img/@2x/sBenefits-4.png`
+							},
+				
+						]
+					},
+				})
+				
+			</script>
 			<!-- start sEquipment-->
 			<section class="section-with-slider section section section--with-slider" id="sEquipment">
 				<div class="container">
@@ -363,11 +412,25 @@
 						<div class="sCalc__group"> 
 							<div class="sCalc__group-title">Площадь помещения (м2):
 							</div>
-							<div class="sCalc__row row range-block">
-								<div class="sCalc__col col-xxl-7 col-xl-8">
-									<input class="slider-range-js" type="text" data-min="10" data-from="500" data-max="1000"/>
+							<div class="row align-items-center">
+								<div class="sCalc__col-auto col-xl-auto col-lg-6">
+									<div class="sCalc__input-wrap form-group"><input class="sCalc__input form-control" type="number" placeholder="Введите значение" name="number"/>
+									</div>
+									<!-- +e.input-wrap-->
 								</div>
-								<div class="col-xl">
+								<div class="col">
+									<div class="row">
+										<div class="col-xl-auto">
+											<label class="custom-input"><input class="custom-input__input" type="radio" name="radio"/><span class="custom-input__lab"></span><span class="custom-input__text">С заглаживанием поверхности</span>
+											</label>
+										</div>
+										<div class="col-xl-auto">
+											<label class="custom-input"><input class="custom-input__input" type="radio" name="radio"/><span class="custom-input__lab"></span><span class="custom-input__text">Без заглаживания поверхности</span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
 									<div class="sCalc__total"> Итого: <span class="range-result-js">23000</span> рублей 
 									</div>
 								</div>
@@ -398,6 +461,21 @@
 				</div>
 			</section>
 			<!-- end sCalc-->
+			<script>
+				let sCalcVue = new Vue({
+					el: '#sCalc',
+					data: {
+						imgSRc: 'img/',
+						subT: 'Узнайте стоимость работ',
+						h2: `Рассчитайте стоимость  <br> механизированной шпатлевки`,
+					},
+					created: function () {
+					},
+					computed: {
+				
+					},
+				})
+			</script>
 			<!-- start sCeilings-->
 			<section class="sCeilings section" id="sCeilings">
 				<div class="container">
@@ -457,9 +535,16 @@
 			<footer class="footer" id="footer">
 				<div class="container">
 					<div class="row">
+						<div class="footer__col col-12 d-md-none"> 
+							<div class="soc"> <a v-for="soc in socs" :href="soc.url" :key="soc.title"> 
+									<svg :class="'icon icon-'+soc.title">
+										<use v-bind="{'xlink:href' : 'img/svg/sprite.svg#'+soc.title}"></use>
+									</svg><span class="d-none d-sm-block">{{soc.text}}</span></a>
+							</div>
+						</div>
 						<div class="footer__col col">{{setCopy}}
 						</div>
-						<div class="footer__col col-auto"><a href="#">Политика конфиденциальности</a>
+						<div class="footer__col col-sm-auto"><a href="#">Политика конфиденциальности</a>
 						</div>
 					</div>
 				</div>

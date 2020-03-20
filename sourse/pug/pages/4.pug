@@ -1,0 +1,95 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sBenefits/_sBenefits.pug 
+include ../blocks/sEquipment/_sEquipment.pug 
+include ../blocks/sMaterials/_sMaterials.pug 
+include ../blocks/sCases/_sCases.pug 
+include ../blocks/sCeilings/_sCeilings.pug 
+include ../blocks/sCalc/_sCalc.pug 
+include ../blocks/aside/_aside.pug 
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Механизированная штукатурка'
+	title= title
+block pagecontent 
+	+mob-mnu
+	+aside() 
+	+topLine()
+	+headerBlock
+	script.
+		let headerBlockVue = new Vue({
+			el: '#headerBlock',
+			data: {
+				imgSRc: 'img/',
+				mainImg: 'img/@2x/head-4.jpg',
+				text: 'Идеально ровные стены за 3 дня',
+				title: '<strong>Механизированная штукатурка от&nbsp;190&nbsp;руб/м2</strong> в&nbsp;Нижнем Новгороде'
+			},
+		})
+
+	
+	+sBenefits
+	script.
+			let sBenefitsVue = new Vue({
+			el: '#sBenefits',
+			data: {
+				imgSRc: 'img/',
+				subT: ' Почему клиенты выбирают нас?',
+				h2: 'Ваши выгоды при работе с&nbsp;нами',
+				items: [
+					{
+						title: "От&nbsp;3&nbsp;дней <br> точно в&nbsp; срок",
+						p:  `Технология и&nbsp;опыт позволяет выполнять даже большие объекты точно в&nbsp;срок.`, 
+						img: `img/@2x/sBenefits-1.png`,
+						style: 'width: 10.77778rem;'
+					},
+					{
+						title: `Материалы по&nbsp;лучшей цене`,
+						p:  `Используем материалы только с&nbsp;наилучшим соотношением цены и&nbsp;качества.`,
+						img: `img/@2x/sBenefits-4-2.png`,
+						style: " bottom: 2rem; "
+					},
+					{
+						title:  `Качество – Германия!`,
+						p: `Используем борудование немецкого производства. Знаменитое качество!`,
+						img: `img/@2x/sBenefits-2-3.png`, 
+						style: " bottom: 2rem; right: 2rem "
+					},
+
+					{
+						title: "Внимание к мелочам",
+						p:`Вне зависимости от&nbsp;сложности, скрупулезный подход к&nbsp;работе и&nbsp;деталям.`,
+						img: `img/@2x/sBenefits-4-4.png`,
+						style: "right:0; bottom: 0;max-width: 50%" 
+					},
+
+				]
+			},
+		})
+
+	+sEquipment
+	+sMaterials
+	+sCases
+	+sCalc(c2)
+	script.
+		let sCalcVue = new Vue({
+			el: '#sCalc',
+			data: {
+				imgSRc: 'img/',
+				subT: 'Узнайте стоимость работ',
+				h2: `Рассчитайте стоимость  <br> механизированной штукатурки  `,
+			},
+			created: function () {
+			},
+			computed: {
+
+			},
+		})
+	+sCeilings
+	+sContact()
+	+footer()
