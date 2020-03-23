@@ -117,7 +117,7 @@
 						<div class="col d-xll-none text-lg-center text-sm-left text-center"><a href="/"><img src="img/@2x/logo.png" alt=""/></a></div>
 						<div class="col-auto d-none d-sm-block"><a class="topLine__link topLine__link--mail" :href="'mailto:'+ email">{{email}}</a>
 						</div>
-						<div class="col-auto d-none d-sm-block"><a class="topLine__link topLine__link--tel" :href="'tel:'+ gettel">{{tel}}</a>
+						<div class="col-auto d-none d-sm-block"><a class="topLine__link topLine__link--tel" :href="'tel:'+ tel | gettel">{{tel}}</a>
 						</div>
 						<div class="col-auto">
 							<div class="d-none d-sm-block"><a class="topLine__btn btn-primary link-modal" href="#modal-call" data-title="Заказать звонок" data-btn="Заказать звонок" data-order="Заказать звонок">
@@ -125,7 +125,7 @@
 									<use xlink:href="img/svg/sprite.svg#phone-call"></use>
 								</svg></a>
 							</div>
-							<div class="d-sm-none"><a class="topLine__btn btn-primary" :href="'tel:'+ gettel">
+							<div class="d-sm-none"><a class="topLine__btn btn-primary" :href="'tel:'+ tel | gettel">
 								<svg class="icon icon-phone-call ">
 									<use xlink:href="img/svg/sprite.svg#phone-call"></use>
 								</svg>{{tel}}</a><a class="topLine__btn btn-blue" href="#">

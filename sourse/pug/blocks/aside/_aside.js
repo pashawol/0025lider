@@ -1,5 +1,5 @@
 
-let asideVue = new Vue({
+let basideVue = new Vue({
 	el: '#aside',
 	data: {
 		imgSRc: app.imgSRc,

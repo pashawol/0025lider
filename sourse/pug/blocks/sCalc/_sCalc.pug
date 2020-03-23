@@ -10,13 +10,6 @@ mixin sCalc(c2)
 				+e.group 
 					+e.group-title Площадь помещения (м2):
 					if c2
-						+e.row.row.range-block
-							+e.col.col-xxl-7.col-xl-8
-									
-									input.slider-range-js(type="text" data-min='10' data-from="500" data-max='1000')
-							.col-xl
-								+e.total  Итого: #[span.range-result-js 23000] рублей 
-					else
 						.row.align-items-center
 							+e.col-auto.col-xl-auto.col-lg-6
 								+input('Введите значение','number')
@@ -26,12 +19,15 @@ mixin sCalc(c2)
 										+in-c('radio','С заглаживанием поверхности','radio')
 									.col-xl-auto
 										+in-c('radio','Без заглаживания поверхности','radio')
-										
-
-
-							 
 							.col-12
 								+e.total  Итого: #[span.range-result-js 23000] рублей 
+					else
+						+e.row.row.range-block
+							+e.col.col-xxl-7.col-xl-8
+									
+									input.slider-range-js(type="text" data-min='10' data-from="500" data-max='1000')
+							.col-xl
+								+e.total  Итого: #[span.range-result-js 23000] рублей  
 				+e.group 
 					+e.group-title Телефон для связи:
 					+e.row.row

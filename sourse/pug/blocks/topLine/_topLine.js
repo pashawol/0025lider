@@ -20,9 +20,10 @@ let topLineVue = new Vue({
 	},
 	created: function () {
 	},
-	computed: {
-		gettel() {
-			return app.gettel;
+	filters: {
+
+		gettel(value) {
+			return value.replace(/\s/g, '');
 		}
 	},
 })

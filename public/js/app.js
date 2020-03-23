@@ -23,13 +23,18 @@ var app = new Vue({
 	},
 	methods: {},
 	created: function created() {},
+	filters: {
+		gettel: function gettel(value) {
+			return value.replace(/\s/g, '');
+		}
+	},
 	computed: {
 		gettel: function gettel() {
 			return this.tel.replace(/\s/g, '');
 		}
 	}
 });
-var asideVue = new Vue({
+var basideVue = new Vue({
 	el: '#aside',
 	data: {
 		imgSRc: app.imgSRc,
@@ -64,6 +69,14 @@ var asideVue = new Vue({
 		}
 	}
 });
+var header = new Vue({
+	el: '#header',
+	data: {
+		imgSRc: 'img/'
+	},
+	created: function created() {},
+	computed: {}
+});
 var footerVue = new Vue({
 	el: '#footer',
 	data: {
@@ -78,15 +91,7 @@ var footerVue = new Vue({
 		}
 	}
 }); // .footer scripts goes here
-
-var header = new Vue({
-	el: '#header',
-	data: {
-		imgSRc: 'img/'
-	},
-	created: function created() {},
-	computed: {}
-}); // let headerBlockVue = new Vue({
+// let headerBlockVue = new Vue({
 //   el: '#headerBlock',
 //   data: {
 //     imgSRc: 'img/',
@@ -187,8 +192,8 @@ var sDifferenceVue = new Vue({
 	created: function created() {},
 	computed: {}
 });
-var sContentVue = new Vue({
-	el: '#sContent',
+var sFormVue = new Vue({
+	el: '#sForm',
 	data: {
 		imgSRc: 'img/',
 		subT: 'В работе используем',
@@ -220,16 +225,6 @@ var sEquipmentVue = new Vue({
 			p: "\u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u0430\u044F \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C \u0432&nbsp;\u0443\u0441\u043B\u043E\u0432\u0438\u044F\u0445 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0439 \u044D\u043A\u043E\u043D\u043E\u043C\u0438\u0447\u043D\u043E\u0441\u0442\u0438 \u0438&nbsp;\u043D\u0430\u0434\u0435\u0436\u043D\u043E\u0441\u0442\u0438. \u041A\u043E\u043D\u0442\u0440\u043E\u043B\u044C \u043D\u0430\u0434 \u0432\u0441\u0435\u043C\u0438 \u044D\u0442\u0430\u043F\u0430\u043C\u0438 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0430. \u041C\u043E\u0449\u043D\u044B\u0439 \u043F\u0440\u0438\u0432\u043E\u0434 \u0441\u043F\u043E\u0441\u043E\u0431\u0435\u043D \u0441\u043F\u0440\u0430\u0432\u0438\u0442\u044C\u0441\u044F \u0441&nbsp;\u043B\u044E\u0431\u044B\u043C\u0438 \u0437\u0430\u0434\u0430\u0447\u0430\u043C\u0438. \u041D\u043E\u0432\u044B\u0439 \u043A\u0430\u043F\u043E\u0442, \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u044B\u0439 \u0432\u044B\u0434\u0435\u0440\u0436\u0430\u0442\u044C \u043B\u044E\u0431\u044B\u0435 \u0443\u0434\u0430\u0440\u044B. \u0423\u043B\u0443\u0447\u0448\u0435\u043D\u043D\u044B\u0435 \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043A\u0438 \u0442\u0435\u043F\u043B\u043E\u043E\u0442\u0432\u043E\u0434\u0430. \u041D\u043E\u0432\u044B\u0439 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440 \u0438&nbsp;\u0441\u0438\u0441\u0442\u0435\u043C\u0430 \u043E\u0445\u043B\u0430\u0436\u0434\u0435\u043D\u0438\u044F. \u0418\u0441\u043F\u044B\u0442\u0430\u043D\u043E \u0432&nbsp;\u0441\u0443\u0440\u043E\u0432\u044B\u0445 \u0440\u043E\u0441\u0441\u0438\u0439\u0441\u043A\u0438\u0445 \u0443\u0441\u043B\u043E\u0432\u0438\u044F\u0445. \u0411\u043E\u043B\u0435\u0435 \u0432\u044B\u0441\u043E\u043A\u0438\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u043A\u043E\u043C\u0444\u043E\u0440\u0442\u0430 \u0438&nbsp;\u0443\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u0435 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438.",
 			img: "img/@2x/qw.png"
 		}]
-	},
-	created: function created() {},
-	computed: {}
-});
-var sFormVue = new Vue({
-	el: '#sForm',
-	data: {
-		imgSRc: 'img/',
-		subT: 'В работе используем',
-		h2: 'Современное оборудование'
 	},
 	created: function created() {},
 	computed: {}
@@ -356,9 +351,19 @@ var topLineVue = new Vue({
 	},
 	methods: {},
 	created: function created() {},
-	computed: {
-		gettel: function gettel() {
-			return app.gettel;
+	filters: {
+		gettel: function gettel(value) {
+			return value.replace(/\s/g, '');
 		}
 	}
+});
+var sContentVue = new Vue({
+	el: '#sContent',
+	data: {
+		imgSRc: 'img/',
+		subT: 'В работе используем',
+		h2: 'Современное оборудование'
+	},
+	created: function created() {},
+	computed: {}
 });

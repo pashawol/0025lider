@@ -17,13 +17,13 @@ mixin topLine()
 				.col-auto.d-none.d-sm-block
 					+e.A.link--mail(:href="'mailto:'+ email") {{email}}
 				.col-auto.d-none.d-sm-block
-					+e.A.link--tel(:href="'tel:'+ gettel") {{tel}}
+					+e.A.link--tel(:href="'tel:'+ tel | gettel") {{tel}}
 				.col-auto
 					.d-none.d-sm-block
 						+e.A.btn.btn-primary.link-modal(href="#modal-call" data-title="Заказать звонок" data-btn="Заказать звонок" data-order="Заказать звонок")
 							+icon("phone-call") 
 					.d-sm-none
-						+e.A.btn.btn-primary(:href="'tel:'+ gettel")
+						+e.A.btn.btn-primary(:href="'tel:'+ tel | gettel")
 							+icon("phone-call") 
 							| {{tel}}
 					 

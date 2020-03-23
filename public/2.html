@@ -117,7 +117,7 @@
 						<div class="col d-xll-none text-lg-center text-sm-left text-center"><a href="/"><img src="img/@2x/logo.png" alt=""/></a></div>
 						<div class="col-auto d-none d-sm-block"><a class="topLine__link topLine__link--mail" :href="'mailto:'+ email">{{email}}</a>
 						</div>
-						<div class="col-auto d-none d-sm-block"><a class="topLine__link topLine__link--tel" :href="'tel:'+ gettel">{{tel}}</a>
+						<div class="col-auto d-none d-sm-block"><a class="topLine__link topLine__link--tel" :href="'tel:'+ tel | gettel">{{tel}}</a>
 						</div>
 						<div class="col-auto">
 							<div class="d-none d-sm-block"><a class="topLine__btn btn-primary link-modal" href="#modal-call" data-title="Заказать звонок" data-btn="Заказать звонок" data-order="Заказать звонок">
@@ -125,7 +125,7 @@
 									<use xlink:href="img/svg/sprite.svg#phone-call"></use>
 								</svg></a>
 							</div>
-							<div class="d-sm-none"><a class="topLine__btn btn-primary" :href="'tel:'+ gettel">
+							<div class="d-sm-none"><a class="topLine__btn btn-primary" :href="'tel:'+ tel | gettel">
 								<svg class="icon icon-phone-call ">
 									<use xlink:href="img/svg/sprite.svg#phone-call"></use>
 								</svg>{{tel}}</a><a class="topLine__btn btn-blue" href="#">
@@ -402,26 +402,12 @@
 						<div class="sCalc__group"> 
 							<div class="sCalc__group-title">Площадь помещения (м2):
 							</div>
-							<div class="row align-items-center">
-								<div class="sCalc__col-auto col-xl-auto col-lg-6">
-									<div class="sCalc__input-wrap form-group"><input class="sCalc__input form-control" type="number" placeholder="Введите значение" name="number"/>
-									</div>
-									<!-- +e.input-wrap-->
+							<div class="sCalc__row row range-block">
+								<div class="sCalc__col col-xxl-7 col-xl-8">
+									<input class="slider-range-js" type="text" data-min="10" data-from="500" data-max="1000"/>
 								</div>
-								<div class="col">
-									<div class="row">
-										<div class="col-xl-auto">
-											<label class="custom-input"><input class="custom-input__input" type="radio" name="radio"/><span class="custom-input__lab"></span><span class="custom-input__text">С заглаживанием поверхности</span>
-											</label>
-										</div>
-										<div class="col-xl-auto">
-											<label class="custom-input"><input class="custom-input__input" type="radio" name="radio"/><span class="custom-input__lab"></span><span class="custom-input__text">Без заглаживания поверхности</span>
-											</label>
-										</div>
-									</div>
-								</div>
-								<div class="col-12">
-									<div class="sCalc__total"> Итого: <span class="range-result-js">23000</span> рублей 
+								<div class="col-xl">
+									<div class="sCalc__total"> Итого: <span class="range-result-js">23000</span> рублей  
 									</div>
 								</div>
 							</div>

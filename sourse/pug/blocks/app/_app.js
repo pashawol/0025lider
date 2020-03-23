@@ -16,6 +16,12 @@ let app = new Vue({
 	},
 	created: function () {
 	},
+	filters: {
+
+		gettel(value) {
+			return value.replace(/\s/g, '');
+		}
+	},
 	computed: {
 		gettel() {
 			return this.tel.replace(/\s/g, '');
