@@ -18,7 +18,7 @@ mixin sEquipment()
 										div( class="wow fadeInUp "  data-wow-delay=`${delay}s` data-wow-duration=`${dur + .5}s`   )
 											+e.title.item-bg__title(v-html="item.title")
 											p(v-html="item.p")
-									+e.col.col-md-6.align-center
-										img.img-abs.img-abs--material.res-i.swiper-lazy(src="#" :data-src="item.img", alt=""  class="wow fadeIn "  data-wow-delay=`${delay}s` data-wow-duration=`${dur + .6}s`   )
+									+e.col.col-md-6.align-center( class="wow fadeIn "  data-wow-delay=`${delay}s` data-wow-duration=`${dur + .6}s`  )
+										img.img-abs.img-abs--material.res-i.swiper-lazy(src="#" :data-src="item.img", alt=""  )
 					+arrow()
 	// end sEquipment
