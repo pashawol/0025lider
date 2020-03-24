@@ -352,7 +352,7 @@ function eventHandler() {
 	$(' .swiper-button-wrapper').each(function () {
 		$(this).addClass("wow fadeInUp");
 		$(this).attr("data-wow-duration", dur + 's');
-		$(this).attr("data-wow-delay", delay + 1 + 's');
+		$(this).attr("data-wow-delay", delay + .6 + 's');
 	}); // $('.section-title .swiper-pagination').each(function () {
 	// 	$(this).addClass("wow fadeInUp");
 	// 	$(this).attr("data-wow-duration", dur + 's');
@@ -372,7 +372,7 @@ function eventHandler() {
 		var posL = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {
 			left: '-100%'
 		};
-		var offset = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : -50;
+		var offset = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : -180;
 		var elem = el;
 		var elemParent = bg;
 		var height = $(elemParent).height();

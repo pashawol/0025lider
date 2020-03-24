@@ -414,7 +414,7 @@ function eventHandler() {
 
 		$(this).addClass("wow fadeInUp");
 		$(this).attr("data-wow-duration", dur + 's');
-		$(this).attr("data-wow-delay", delay + 1 + 's')
+		$(this).attr("data-wow-delay", delay + .6 + 's')
 	})
 
 
@@ -436,7 +436,7 @@ function eventHandler() {
 	wow.init();
 	var controller = new ScrollMagic.Controller();
 
-	function bgAnimate(el, bg, posL = { left: '-100%' }, offset = -50) {
+	function bgAnimate(el, bg, posL = { left: '-100%' }, offset = -180) {
 
 		let elem = el;
 		let elemParent = bg;

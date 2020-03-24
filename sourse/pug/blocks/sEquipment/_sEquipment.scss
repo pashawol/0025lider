@@ -91,7 +91,7 @@
 			padding: rem(60) rem(0) rem(40);
 		}
 
-		padding: rem(40) 0 rem(20);
+		padding: rem(40) rem(20) rem(20);
 
 		@include media-breakpoint-up(md) {
 			padding: rem(60) 0;
