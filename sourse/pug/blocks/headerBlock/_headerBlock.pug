@@ -7,7 +7,7 @@ mixin headerBlock(img, p, title)
 				.container
 					p  {{text}}
 					h1(v-html= "title") 
-					+e.btn(href="#") Рассчитать стоимость 
+					+e.btn.scroll-link(href="#sCalc") Рассчитать стоимость 
 		+b.btn-bottom--js
 			+icon("arrow-down")
 	// end headerBlock

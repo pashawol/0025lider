@@ -2,11 +2,11 @@ mixin sBenefits()
 	// start sBenefits
 	+b.SECTION.sBenefits.section#sBenefits&attributes(attributes)
 		.container
-			+b.section-title
-				+e.top-title(v-html="subT")
+			+b.section-title( )
+				+e.top-title(v-html="subT" )
 				h2(v-html="h2") 
 			.row
-				+e.col.col-md-6(v-for="item in items" :key="item.title")
+				+e.col.col-md-6(v-for="item in items" :key="item.title" class="wow fadeInRight" data-wow-duration=`${dur}s`  data-wow-delay=`${delay}s`)
 					+e.item
 						+e.title(v-html="item.title")
 						p(v-html="item.p")

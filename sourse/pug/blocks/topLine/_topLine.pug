@@ -3,15 +3,15 @@ mixin topLine()
 	+b.topLine#topLine&attributes(attributes) 
 		.container-fluid
 			.row
-				.col-xll.col-auto.d-none.d-lg-block
-					+e.logo.d-xll-none
+				.col-xl.col-auto.d-none.d-lg-block
+					+e.logo.d-xl-none
 						+e.logo-caption.text-secondary(v-html="descr")
-					.d-none.d-xll-block
+					.d-none.d-xl-block
 						ul
-							li(v-for="menu in menus" :key="menu.title")
-								a(:href="menu.url" ) {{menu.title}}
+							li(v-for="(menu, index) in menus" :key="menu.title" )
+								a(:href="menu.url"  ) {{menu.title}}
 
-				.col.d-xll-none.text-lg-center.text-sm-left.text-center
+				.col.d-xl-none.text-lg-center.text-sm-left.text-center
 					a(href="/")
 						img(src="img/@2x/logo.png", alt="")
 				.col-auto.d-none.d-sm-block
@@ -27,8 +27,8 @@ mixin topLine()
 							+icon("phone-call") 
 							| {{tel}}
 					 
-						+e.btn.btn-blue(href="#")
+						+e.btn.btn-blue.link-modal(href="#modal-call" data-title="Вызвать замерщика" data-btn="Вызвать замерщика" data-order="Вызвать замерщика")
 							+icon('builder')
-		.d-none.d-sm-block
+		.d-none
 			+soc()
 	// end topLine

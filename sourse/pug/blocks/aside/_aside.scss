@@ -5,7 +5,7 @@
 	z-index: 1000;
 	@include mt(.3);
 
-	@include media-breakpoint-up(xll) {
+	@include media-breakpoint-up(xl) {
 		transform: translateX(0) !important;
 
 		&.before-loaded {
@@ -41,13 +41,17 @@
 		height: 100vh;
 
 		//  min-height: 1000px;
-		@include media-breakpoint-up(xll) {
+		@include media-breakpoint-up(xl) {
 
 			padding: rem(30);
 		}
 
 		padding: rem(28) rem(15);
-		padding-bottom: rem(70) !important;
+
+		@include media-breakpoint-up(sm) {
+
+			padding-bottom: rem(70) !important;
+		}
 
 		@include media-breakpoint-up(md) {
 
@@ -86,7 +90,13 @@
 
 	li {
 		list-style: none;
-		margin-bottom: 4vh;
+
+		@include media-breakpoint-up(sm) {
+
+			margin-bottom: 3.6vh;
+		}
+
+		margin-bottom: 1.5rem;
 
 		@include mt;
 
@@ -96,14 +106,13 @@
 		}
 
 		.menu-icon {
-			@include media-breakpoint-up(xxl) {
+			@include media-breakpoint-up(xxl) {}
 
-				padding-bottom: rem(20);
-				margin-bottom: rem(20);
-			}
+			padding-bottom: rem(20);
+			margin-bottom: rem(20);
 
-			padding-bottom: rem(10);
-			margin-bottom: rem(10);
+			// padding-bottom: rem(10);
+			// margin-bottom: rem(10);
 			position: relative;
 
 			&::before {
@@ -147,8 +156,14 @@
 			color: $body-color !important;
 			text-decoration: none !important;
 			font-weight: 500;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: rem(200);
 
 			@include media-breakpoint-between(md, lg) {
+				max-width: none;
+				margin-left: 0;
 				display: flex;
 				align-items: center;
 				text-align: left;
@@ -192,13 +207,19 @@
 		bottom: 0;
 		width: 100%;
 		color: #ffffff;
-		height: rem(80);
+
+		@include media-breakpoint-up(xl) {
+			height: rem(80);
+		}
+
+		height: rem(68);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
 		z-index: 2;
 		padding: 0;
+
 
 		@include media-breakpoint-up(xxl) {
 			max-width: rem(263);
@@ -217,6 +238,7 @@
 			color: #1167ab;
 			font-size: rem(130);
 			z-index: -1;
+			@include mt;
 
 			@include media-breakpoint-between(md, lg) {
 				transform: none;
@@ -294,9 +316,11 @@
 	@include media-breakpoint-down(sm) {}
 
 	@include media-breakpoint-down(xs) {
+		margin-bottom: 0;
+
 		&__inner {
 
-			padding-bottom: 100px;
+			padding-bottom: 150px;
 			padding-top: rem(100);
 		}
 
@@ -304,6 +328,10 @@
 			margin-left: auto;
 			margin-right: auto;
 			max-width: rem(160);
+		}
+
+		.toggle-menu-mobile {
+			display: none;
 		}
 	}
 
@@ -375,6 +403,7 @@
 			color: $secondary;
 			line-height: 1.25;
 			white-space: nowrap;
+			font-weight: 500;
 			left: 50%;
 			top: 50%;
 			transform: rotate(-90deg) translate(-50%, -50%);

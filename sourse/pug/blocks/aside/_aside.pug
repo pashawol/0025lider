@@ -3,9 +3,9 @@ mixin aside()
 	+b.ASIDE.aside--js#aside
 		//- .before-loaded
 		+e.inner
-			+b.toggle-menu-mobile--js.d-xll-none
+			+b.toggle-menu-mobile--js.d-xl-none
 				span
-			.d-none.d-xll-block
+			.d-none.d-xl-block
 				+e.logo.d-none.d-xl-block
 					a(href="/")
 						img(src="img/@2x/logo.png", alt="")
@@ -27,12 +27,12 @@ mixin aside()
 					+icon('builder')
 					|  Вызвать замерщика
 
-	+b.toggle-line--js.d-xll-none
+	+b.toggle-line--js.d-xl-none
 		+b.toggle-menu-mobile--js
 			span
 		+b.toggle-menu-mobile--center.--js
 		
-		+e.btn(href="#")
+		+e.btn.link-modal(href="#modal-call" data-title="Вызвать замерщика" data-btn="Вызвать замерщика" data-order="Вызвать замерщика")
 			+icon('builder')
 
 	// end aside

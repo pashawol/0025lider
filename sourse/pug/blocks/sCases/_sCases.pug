@@ -7,27 +7,28 @@ mixin sCases()
 				+e.h2-wrap
 					h2(v-html="h2")  
 					.swiper-pagination
-			.slider-wrapper
+			.slider-wrapper#sCasesbgWrap
 				+e.slider.slider-js.swiper-container
+					.item-bg.item-bg-animate.p-0#sCasesbg
 					.swiper-wrapper
 						template(v-for="x in 3") 
 							+e.slide.swiper-slide(v-for="item in items" :key="item.title")
-								+e.item.item-bg.p-0
+								+e.item.p-0
 									+e.row.row
-										+e.col.col-md-6.align-center.swiper-no-swiping
+										+e.col.col-md-6.align-center.swiper-no-swiping( class="wow fadeInRight "  data-wow-delay=`${delay}s` data-wow-duration=`${dur }s`   )
 											+b.tabs 
 												+e.wrap 
 													template(v-for="n in 5")
 														+e.content(v-for="(gal, index) in item.gals" :class="{ 'active': n === 1 }")
 															+e.A.img-wrap--lg.bg-wrap(:href="'img/@2x/' + gal" data-fancybox="gal")
 																img.img-bg.object-fit-js.swiper-lazy(src="#" :data-src="'img/@2x/' + gal", alt="")
-												+e.caption
+												+e.caption( class="wow fadeIn  "  data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur}s`)
 													template(v-for="n in 5")
 														+e.btn(v-for="(gal, index) in item.gals" :class="{ 'active': n === 1 }")
 															+e.img-wrap--sm.bg-wrap
 																img.img-bg.object-fit-js.swiper-lazy(src="#" :data-src="'img/@1x/' + gal", alt="")
 
-										+e.col.col-md-6
+										+e.col.col-md-6( class="wow fadeInRight "  data-wow-delay=`${delay + 1}s` data-wow-duration=`${dur }s`   )
 											+e.caption
 												+e.title.item-bg__title(v-html="item.title")
 												p(v-html="item.p")

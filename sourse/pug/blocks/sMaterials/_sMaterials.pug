@@ -1,19 +1,20 @@
 mixin sMaterials()
 	// start sMaterials
-	+b.SECTION.section-with-slider.section.section--with-slider#sMaterials&attributes(attributes)
+	+b.SECTION.section-with-slider--material.section.section--with-slider#sMaterials&attributes(attributes)
 		.container
 			+b.section-title
 				+e.top-title(v-html="subT")
 				+e.h2-wrap
 					h2(v-html="h2")  
 					.swiper-pagination
-			.slider-wrapper
+			.slider-wrapper#sMaterialsbgWrap
 				+e.slider.slider-js.swiper-container
+					.item-bg.item-bg-animate.p-0#sMaterialsbg
 					.swiper-wrapper
 						+e.slide.swiper-slide(v-for="item in items" :key="item.title")
-							+e.item.item-bg
+							+e.item
 								+e.row.row
-									+e.col.col-lg-7.col-xl-8
+									+e.col.col-lg-7.col-xl-8( class="wow fadeInUp "  data-wow-delay=`${delay + .3}s` data-wow-duration=`${dur}s`   )
 										+e.title.item-bg__title(v-html="item.title")
 										//- .row
 										.row.justify-content-center
@@ -30,7 +31,7 @@ mixin sMaterials()
 														img.res-i.swiper-lazy(src="#" :data-src="list.img", alt=""  )
 													+e.text(v-html="list.text") 
 										
-									+e.col.col-md.align-center
-										img.img-abs.res-i.swiper-lazy(src="#" :data-src="item.img", alt=""  )
+									+e.col--img.col-md.align-center( class="wow fadeIn "  data-wow-delay=`${delay+ .6}s` data-wow-duration=`${dur }s` )
+										img.img-abs.img-abs--material.res-i.swiper-lazy(src="#" :data-src="item.img", alt=""  )
 					+arrow()
 	// end sMaterials

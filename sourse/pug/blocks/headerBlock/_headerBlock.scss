@@ -1,14 +1,21 @@
 // start .headerBlock
 .headerBlock {
-	padding-top: 0 !important;
+	padding-top: rem(68) !important;
 	padding-bottom: 0 !important;
-
+	padding-right: 0 !important;
+	position: relative;
 
 	&__table {
 
 		display: table;
 		width: 100%;
-		min-height: calc(100vh - #{rem(68)});
+
+		@include media-breakpoint-up(sm) {
+
+			min-height: calc(100vh - #{rem(68)});
+		}
+
+		min-height: calc(100vh - #{rem(100 + 68 + 38)});
 	}
 
 	&__inner {
@@ -81,6 +88,7 @@
 		text-align: center;
 		color: #ffffff;
 		background-color: $body-color;
+		padding-bottom: rem(50);
 
 		img {
 			opacity: 0.5;
@@ -102,14 +110,15 @@
 
 	@include media-breakpoint-up(sm) {
 		left: auto;
-		position: fixed;
+		// position: absolute;
 		right: 0;
 		transform: none;
-		z-index: 1200;
+		// z-index: 1200;
 		bottom: 0;
 	}
 
-	bottom: rem(68);
+	z-index: 10;
+	bottom: 0;
 	transform:translateX(-50%);
 	position: absolute;
 	left: 50%;

@@ -1,7 +1,7 @@
 // start .topLine
-.main-wrapper {
-	padding-top: rem(68);
-}
+// .main-wrapper {
+// 	padding-top: rem(68);
+// }
 
 .topLine {
 	img {
@@ -61,7 +61,15 @@
 				border-bottom-color: $primary;
 			}
 		}
+
+		li.active {
+			a {
+				color: $body-color;
+				border-bottom-color: $primary;
+			}
+		}
 	}
+
 
 	padding-right: 0 !important;
 
@@ -152,7 +160,11 @@
 
 	@include media-breakpoint-only(lg) {}
 
-	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-only(xl) {
+		.row {
+			@include roww(10);
+		}
+	}
 
 	//
 	@include media-breakpoint-down(xl) {}
@@ -164,7 +176,7 @@
 	@include media-breakpoint-down(sm) {}
 
 	@include media-breakpoint-down(xs) {
-		padding-left: rem(68);
+		padding-left: calc(#{rem(68)} + 15px);
 	}
 
 }

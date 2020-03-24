@@ -7,16 +7,18 @@ mixin sEquipment()
 				+e.h2-wrap
 					h2(v-html="h2")  
 					.swiper-pagination
-			.slider-wrapper
+			.slider-wrapper#sEquipmentbgWrap
 				+e.slider.slider-js.swiper-container
+					.item-bg.item-bg-animate.p-0#sEquipmentbg
 					.swiper-wrapper
 						+e.slide.swiper-slide(v-for="item in items" :key="item.title")
-							+e.item.item-bg
+							+e.item
 								+e.row.row
 									+e.col.col-md-6
-										+e.title.item-bg__title(v-html="item.title")
-										p(v-html="item.p")
+										div( class="wow fadeInUp "  data-wow-delay=`${delay}s` data-wow-duration=`${dur + .5}s`   )
+											+e.title.item-bg__title(v-html="item.title")
+											p(v-html="item.p")
 									+e.col.col-md-6.align-center
-										img.img-abs.res-i.swiper-lazy(src="#" :data-src="item.img", alt=""  )
+										img.img-abs.img-abs--material.res-i.swiper-lazy(src="#" :data-src="item.img", alt=""  class="wow fadeIn "  data-wow-delay=`${delay}s` data-wow-duration=`${dur + .6}s`   )
 					+arrow()
 	// end sEquipment

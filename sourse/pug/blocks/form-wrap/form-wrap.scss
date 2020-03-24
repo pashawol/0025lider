@@ -236,7 +236,7 @@
 		top: rem(-3);
 		width: rem(30);
 		height: rem(30);
-		border: 2px solid $primary;
+		border: 2px solid #e8e8e8;
 		background-color: #ffffff;
 		@include mt;
 		position: absolute;
@@ -273,6 +273,7 @@
 	}
 
 	&__input:checked+&__lab {
+		border-color: $primary;
 
 		&::after {
 

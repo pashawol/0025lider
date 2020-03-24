@@ -189,7 +189,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -222,13 +222,6 @@ function eventHandler() {
 
 		const topH = $("header ").innerHeight();
 
-		$(window).scroll(function () {
-			if ($(window).scrollTop() > topH) {
-				$('.top-nav  ').addClass('fixed');
-			} else {
-				$('.top-nav  ').removeClass('fixed');
-			}
-		});
 		// конец добавил
 		if (window.matchMedia("(min-width: 1440px)").matches) {
 			JSCCommon.closeMenu();
@@ -253,29 +246,6 @@ function eventHandler() {
 	});
 
 
-	// var galleryThumbs = new Swiper('.gallery-thumbs', {
-	// 	spaceBetween: 10,
-	// 	slidesPerView: 5,
-	// 	// loop: true,
-	// 	loopedSlides: 5, //looped slides should be the same
-	// 	watchSlidesVisibility: true,
-	// 	watchSlidesProgress: true,
-	// 	slideToClickedSlide: true,
-
-
-	// });
-	// var galleryTop = new Swiper('.gallery-top', {
-	// 	spaceBetween: 10,
-	// 	// loop: true,
-	// 	loopedSlides: 5, //looped slides should be the same
-	// 	slideToClickedSlide: true,
-
-	// 	thumbs: {
-	// 		swiper: galleryThumbs,
-	// 	},
-
-	// });
-
 	$(".slider-js ").each(function () {
 		let th = $(this);
 		if (th.find('.swiper-slide').length > 1) {
@@ -288,6 +258,7 @@ function eventHandler() {
 				lazy: {
 					loadPrevNext: true,
 				},
+				spaceBetween: 30,
 				loop: true,
 				pagination: {
 					el: th.closest('.section').find('.swiper-pagination'),
@@ -326,8 +297,8 @@ function eventHandler() {
 		}),
 
 			myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-				// hintContent: 'Собственный значок метки',
-				// balloonContent: 'Это красивая метка'
+				hintContent: 'г. Нижний Новгород, ул. Черепичная, 2Ак2',
+				balloonContent: 'г. Нижний Новгород, ул. Черепичная, 2Ак2'
 			}, {
 				// Опции.
 				// Необходимо указать данный тип макета.
@@ -338,7 +309,7 @@ function eventHandler() {
 				iconImageSize: [41, 57],
 				// Смещение левого верхнего угла иконки относительно
 				// её "ножки" (точки привязки).
-				iconImageOffset: [-95, -80]
+				iconImageOffset: [-30, -47]
 			});
 
 		myMap.geoObjects
@@ -346,7 +317,150 @@ function eventHandler() {
 	});
 
 
-};
+
+
+
+	// Cache selectors
+	var lastId,
+		topMenu = $(" .topLine ul"),
+		topMenuHeight = 40,
+		// topMenuHeight = topMenu.outerHeight()+15,
+		// All list items
+		menuItems = topMenu.find("a"),
+		// Anchors corresponding to menu items
+		scrollItems = menuItems.map(function () {
+			var item = $($(this).attr("href"));
+			if (item.length) { return item; }
+		});
+
+	// Bind click handler to menu items
+	// so we can get a fancy scroll animation
+	menuItems.click(function (e) {
+		var href = $(this).attr("href"),
+			offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+		$('html, body').stop().animate({
+			scrollTop: offsetTop
+		}, 1100);
+		e.preventDefault();
+	});
+
+
+	function getActive() {
+
+		// Get container scroll position
+		var fromTop = $(window).scrollTop() + topMenuHeight;
+
+		// Get id of current scroll item
+		var cur = scrollItems.map(function () {
+			if ($(this).offset().top < fromTop)
+				return this;
+		});
+		// Get the id of the current element
+		cur = cur[cur.length - 1];
+		var id = cur && cur.length ? cur[0].id : "";
+
+		if (lastId !== id) {
+			lastId = id;
+			// Set/remove active class
+			menuItems
+				.removeClass("active").parent()
+				.end().filter("[href='#" + id + "']").addClass("active");
+		}
+	}
+
+	getActive();
+	// Bind to scroll
+	$(window).scroll(function () {
+		getActive();
+	});
+	// $(".headerBlock").addClass("currentSection");
+
+
+	// console.log(window.pageYOffset);
+	$(".btn-bottom--js").click(function () {
+		// Visible(element);
+		var currentSection = $(".headerBlock");
+		// console.log(currentSection);
+		var offsetTop = currentSection.offset().top + currentSection.height();
+
+		$('html, body').animate({
+			scrollTop: offsetTop + 40
+		}, 1100);
+		if ((offsetTop - window.pageYOffset) <= $(window).height()) {
+		}
+
+		// currentSection.removeClass('currentSection')
+		// 	.next('.section').addClass("currentSection")
+
+	})
+
+	let dur = .6;
+	let delay = dur;
+	$('.section-title').each(function () {
+
+		$(this).addClass("wow fadeInUp");
+		$(this).attr("data-wow-duration", dur + 's');
+		// $(this).attr("data-wow-delay", delay + 's')
+	})
+
+	$('.section-title .swiper-pagination ').each(function () {
+
+		$(this).addClass("wow fadeInUp");
+		$(this).attr("data-wow-duration", dur + 's');
+		$(this).attr("data-wow-delay", delay + 's')
+	})
+
+	$(' .swiper-button-wrapper').each(function () {
+
+		$(this).addClass("wow fadeInUp");
+		$(this).attr("data-wow-duration", dur + 's');
+		$(this).attr("data-wow-delay", delay + 1 + 's')
+	})
+
+
+	// $('.section-title .swiper-pagination').each(function () {
+
+	// 	$(this).addClass("wow fadeInUp");
+	// 	$(this).attr("data-wow-duration", dur + 's');
+	// 	$(this).attr("data-wow-delay", delay + 's')
+	// })
+
+
+	$(".sBenefits__col, .sProcess__col").each(function (i) {
+		$(this).attr("data-wow-delay", delay * .5 * (i + .5) + 's')
+	})
+
+	var wow = new WOW({
+		mobile: false
+	});
+	wow.init();
+	var controller = new ScrollMagic.Controller();
+
+	function bgAnimate(el, bg, posL = { left: '-100%' }, offset = -50) {
+
+		let elem = el;
+		let elemParent = bg;
+		let height = $(elemParent).height();
+		let offsetEl = height * .52
+		var durationEl = ($(window).height() - offsetEl) * 1.2;
+		var tween = TweenMax.fromTo(elem, .05,
+			posL,
+			{ left: 0, ease: "elastic", }
+		);
+		var scene = new ScrollMagic.Scene({ triggerElement: elemParent, duration: height, offset: offset })
+			.setTween(tween)
+			// .addIndicators({ name: "loop" }) // add indicators (requires plugin)
+			.addTo(controller);
+	}
+	bgAnimate('#sEquipmentbg', "#sEquipmentbgWrap");
+	bgAnimate('#sMaterialsbg', "#sMaterialsbgWrap", { left: '100%' });
+	bgAnimate('#sCasesbg', "#sCasesbgWrap");
+	bgAnimate('#sCalcbg', "#sCalcbgWrap", { left: '100%' });
+	bgAnimate('#sCeilingsbg', "#sCeilingsbgWrap");
+	bgAnimate('#sContactbg', "#sContactbgWrap", { left: '100%' }, -300);
+
+
+}
 if (document.readyState !== 'loading') {
 	eventHandler();
 } else {

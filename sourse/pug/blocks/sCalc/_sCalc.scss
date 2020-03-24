@@ -9,6 +9,9 @@
 	}
 
 	&__block {
+		margin-bottom: rem(30);
+		position: relative;
+
 		@include media-breakpoint-up(xxl) {
 
 			padding: rem(83) rem(98);
@@ -24,7 +27,7 @@
 
 	&__group-title {
 		font-weight: 500;
-		padding-bottom: rem(20);
+		padding-bottom: rem(25);
 	}
 
 	&__col {

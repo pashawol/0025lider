@@ -20,50 +20,22 @@
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#3361d8">
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
+		<link rel="stylesheet" href="libs/animate.css/animate.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="libs/ion-rangeslider/css/ion.rangeSlider.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 		<script src="libs/vue/vue.min.js"></script>
 	</head>
-	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+	<body>
+		<div class="body-toggle-menu-mobile toggle-menu-mobile--js"></div><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 		<div id="app"></div>
 		<div class="main-wrapper">
-			<div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span></span>
-			</div>
-			<div class="menu-mobile menu-mobile--js d-lg-none">
-				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
-				</div>
-				<div class="menu-mobile__inner">
-					<ul class="menu-mobile__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="/" itemprop="url">Главная</a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Услуги  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Подбор септика   </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Акции </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> О компании  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Доставка и оплата </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Клиентам  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Наши работы   </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Контакты </a>
-						</li>
-					</ul>
-					<div class="text-right"></div>
-				</div>
-			</div>
-			<!--  мобильное меню-->
 			<!-- start aside-->
 			<aside class="aside aside--js" id="aside">
 				<div class="aside__inner">
-					<div class="toggle-menu-mobile toggle-menu-mobile--js d-xll-none"><span></span>
+					<div class="toggle-menu-mobile toggle-menu-mobile--js d-xl-none"><span></span>
 					</div>
-					<div class="d-none d-xll-block">
+					<div class="d-none d-xl-block">
 						<div class="aside__logo d-none d-xl-block"><a href="/"><img src="img/@2x/logo.png" alt=""/></a>
 							<div class="aside__logo-caption text-secondary" v-html="descr">
 							</div>
@@ -89,11 +61,11 @@
 					</div>
 				</div>
 			</aside>
-			<div class="toggle-line toggle-line--js d-xll-none">
+			<div class="toggle-line toggle-line--js d-xl-none">
 				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
 				</div>
 				<div class="toggle-menu-mobile toggle-menu-mobile--center toggle-menu-mobile--js">
-				</div><a class="toggle-line__btn" href="#">
+				</div><a class="toggle-line__btn link-modal" href="#modal-call" data-title="Вызвать замерщика" data-btn="Вызвать замерщика" data-order="Вызвать замерщика">
 				<svg class="icon icon-builder ">
 					<use xlink:href="img/svg/sprite.svg#builder"></use>
 				</svg></a>
@@ -103,18 +75,18 @@
 			<div class="topLine" id="topLine"> 
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col-xll col-auto d-none d-lg-block">
-							<div class="topLine__logo d-xll-none">
+						<div class="col-xl col-auto d-none d-lg-block">
+							<div class="topLine__logo d-xl-none">
 								<div class="topLine__logo-caption text-secondary" v-html="descr">
 								</div>
 							</div>
-							<div class="d-none d-xll-block">
+							<div class="d-none d-xl-block">
 								<ul>
-									<li v-for="menu in menus" :key="menu.title"><a :href="menu.url">{{menu.title}}</a></li>
+									<li v-for="(menu, index) in menus" :key="menu.title"><a :href="menu.url">{{menu.title}}</a></li>
 								</ul>
 							</div>
 						</div>
-						<div class="col d-xll-none text-lg-center text-sm-left text-center"><a href="/"><img src="img/@2x/logo.png" alt=""/></a></div>
+						<div class="col d-xl-none text-lg-center text-sm-left text-center"><a href="/"><img src="img/@2x/logo.png" alt=""/></a></div>
 						<div class="col-auto d-none d-sm-block"><a class="topLine__link topLine__link--mail" :href="'mailto:'+ email">{{email}}</a>
 						</div>
 						<div class="col-auto d-none d-sm-block"><a class="topLine__link topLine__link--tel" :href="'tel:'+ tel | gettel">{{tel}}</a>
@@ -128,7 +100,7 @@
 							<div class="d-sm-none"><a class="topLine__btn btn-primary" :href="'tel:'+ tel | gettel">
 								<svg class="icon icon-phone-call ">
 									<use xlink:href="img/svg/sprite.svg#phone-call"></use>
-								</svg>{{tel}}</a><a class="topLine__btn btn-blue" href="#">
+								</svg>{{tel}}</a><a class="topLine__btn btn-blue link-modal" href="#modal-call" data-title="Вызвать замерщика" data-btn="Вызвать замерщика" data-order="Вызвать замерщика">
 								<svg class="icon icon-builder ">
 									<use xlink:href="img/svg/sprite.svg#builder"></use>
 								</svg></a>
@@ -136,7 +108,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="d-none d-sm-block">
+				<div class="d-none">
 					<div class="soc"> <a v-for="soc in socs" :href="soc.url" :key="soc.title"> 
 							<svg :class="'icon icon-'+soc.title">
 								<use v-bind="{'xlink:href' : 'img/svg/sprite.svg#'+soc.title}"></use>
@@ -151,7 +123,7 @@
 					<div class="headerBlock__inner">
 						<div class="container">
 							<p> {{text}}</p>
-							<h1 v-html="title"> </h1><a class="headerBlock__btn" href="#">Рассчитать стоимость </a>
+							<h1 v-html="title"> </h1><a class="headerBlock__btn scroll-link" href="#sCalc">Рассчитать стоимость </a>
 						</div>
 					</div>
 				</div>
@@ -184,7 +156,7 @@
 						<h2 v-html="h2"> </h2>
 					</div>
 					<div class="row">
-						<div class="sBenefits__col col-md-6" v-for="item in items" :key="item.title">
+						<div class="sBenefits__col col-md-6 wow fadeInRight" v-for="item in items" :key="item.title" data-wow-duration="0.6s" data-wow-delay="0.6s">
 							<div class="sBenefits__item">
 								<div class="sBenefits__title" v-html="item.title">
 								</div>
@@ -204,13 +176,13 @@
 						h2: 'Ваши выгоды при работе с&nbsp;нами',
 						items: [
 							{
-								title: `От&nbsp;3&nbsp;дней <br> точно в&nbsp; срок`,
-								p: `Технология и&nbsp;опыт позволяют выполнять объемы до&nbsp; 500 м2 &nbsp; точно в&nbsp; срок.`, img: `img/@2x/sBenefits-1.png`,
+								title: `От&nbsp;3&nbsp;дней <br> точно в&nbsp;срок`,
+								p: `Технология и&nbsp;опыт позволяют выполнять объемы до&nbsp;500 м2 &nbsp;точно в&nbsp;срок.`, img: `img/@2x/sBenefits-1.png`,
 								style: 'width: 10.77778rem;'
 							},
 							{
 								title: `Высокое качество готовой поверхности`,
-								p: `Не&nbsp;требует дальнейшей обработки за&nbsp; счет увеличения адгезии между поверхностью и&nbsp; раствором.`,
+								p: `Не&nbsp;требует дальнейшей обработки за&nbsp;счет увеличения адгезии между поверхностью и&nbsp;раствором.`,
 								img: `img/@2x/sBenefits-2.png`
 							},
 							{
@@ -222,7 +194,7 @@
 				
 							{
 								title: "Экономный расход шпаклевочной смеси",
-								p: `А&nbsp;также выгодная цена шпатлевки от&nbsp; 130&nbsp; руб/ м2.`,
+								p: `А&nbsp;также выгодная цена шпатлевки от&nbsp;130&nbsp;руб/ м2.`,
 								img: `img/@2x/sBenefits-4.png`
 							},
 				
@@ -242,18 +214,21 @@
 							<div class="swiper-pagination"></div>
 						</div>
 					</div>
-					<div class="slider-wrapper">
+					<div class="slider-wrapper" id="sEquipmentbgWrap">
 						<div class="section-with-slider__slider slider-js swiper-container">
+							<div class="item-bg item-bg-animate p-0" id="sEquipmentbg"></div>
 							<div class="swiper-wrapper">
 								<div class="section-with-slider__slide swiper-slide" v-for="item in items" :key="item.title">
-									<div class="section-with-slider__item item-bg">
+									<div class="section-with-slider__item">
 										<div class="section-with-slider__row row">
 											<div class="section-with-slider__col col-md-6">
-												<div class="section-with-slider__title item-bg__title" v-html="item.title">
+												<div class="wow fadeInUp " data-wow-delay="0.6s" data-wow-duration="1.1s">
+													<div class="section-with-slider__title item-bg__title" v-html="item.title">
+													</div>
+													<p v-html="item.p"></p>
 												</div>
-												<p v-html="item.p"></p>
 											</div>
-											<div class="section-with-slider__col col-md-6 align-center"><img class="img-abs res-i swiper-lazy" src="#" :data-src="item.img" alt=""/>
+											<div class="section-with-slider__col col-md-6 align-center"><img class="img-abs img-abs--material res-i swiper-lazy wow fadeIn " src="#" :data-src="item.img" alt="" data-wow-delay="0.6s" data-wow-duration="1.2s"/>
 											</div>
 										</div>
 									</div>
@@ -269,7 +244,7 @@
 			</section>
 			<!-- end sEquipment-->
 			<!-- start sMaterials-->
-			<section class="section-with-slider section section section--with-slider" id="sMaterials">
+			<section class="section-with-slider section-with-slider--material section section section--with-slider" id="sMaterials">
 				<div class="container">
 					<div class="section-title">
 						<div class="section-title__top-title" v-html="subT">
@@ -279,13 +254,14 @@
 							<div class="swiper-pagination"></div>
 						</div>
 					</div>
-					<div class="slider-wrapper">
+					<div class="slider-wrapper" id="sMaterialsbgWrap">
 						<div class="section-with-slider__slider slider-js swiper-container">
+							<div class="item-bg item-bg-animate p-0" id="sMaterialsbg"></div>
 							<div class="swiper-wrapper">
 								<div class="section-with-slider__slide swiper-slide" v-for="item in items" :key="item.title">
-									<div class="section-with-slider__item item-bg">
+									<div class="section-with-slider__item">
 										<div class="section-with-slider__row row">
-											<div class="section-with-slider__col col-lg-7 col-xl-8">
+											<div class="section-with-slider__col col-lg-7 col-xl-8 wow fadeInUp" data-wow-delay="0.8999999999999999s" data-wow-duration="0.6s">
 												<div class="section-with-slider__title item-bg__title" v-html="item.title">
 												</div>
 												<div class="row justify-content-center">
@@ -311,7 +287,7 @@
 													</template>
 												</div>
 											</div>
-											<div class="section-with-slider__col col-md align-center"><img class="img-abs res-i swiper-lazy" src="#" :data-src="item.img" alt=""/>
+											<div class="section-with-slider__col section-with-slider__col--img col-md align-center wow fadeIn" data-wow-delay="1.2s" data-wow-duration="0.6s"><img class="img-abs img-abs--material res-i swiper-lazy" src="#" :data-src="item.img" alt=""/>
 											</div>
 										</div>
 									</div>
@@ -337,14 +313,15 @@
 							<div class="swiper-pagination"></div>
 						</div>
 					</div>
-					<div class="slider-wrapper">
+					<div class="slider-wrapper" id="sCasesbgWrap">
 						<div class="section-with-slider__slider slider-js swiper-container">
+							<div class="item-bg item-bg-animate p-0" id="sCasesbg"></div>
 							<div class="swiper-wrapper">
 								<template v-for="x in 3"> 
 									<div class="section-with-slider__slide swiper-slide" v-for="item in items" :key="item.title">
-										<div class="section-with-slider__item item-bg p-0">
+										<div class="section-with-slider__item p-0">
 											<div class="section-with-slider__row row">
-												<div class="section-with-slider__col col-md-6 align-center swiper-no-swiping">
+												<div class="section-with-slider__col col-md-6 align-center swiper-no-swiping wow fadeInRight" data-wow-delay="0.6s" data-wow-duration="0.6s">
 													<div class="tabs"> 
 														<div class="tabs__wrap"> 
 															<template v-for="n in 5">
@@ -352,7 +329,7 @@
 																</div>
 															</template>
 														</div>
-														<div class="tabs__caption">
+														<div class="tabs__caption wow fadeIn" data-wow-delay="0.8s" data-wow-duration="0.6s">
 															<template v-for="n in 5">
 																<div class="tabs__btn" v-for="(gal, index) in item.gals" :class="{ 'active': n === 1 }">
 																	<div class="tabs__img-wrap tabs__img-wrap--sm bg-wrap"><img class="img-bg object-fit-js swiper-lazy" src="#" :data-src="'img/@1x/' + gal" alt=""/>
@@ -362,7 +339,7 @@
 														</div>
 													</div>
 												</div>
-												<div class="section-with-slider__col col-md-6">
+												<div class="section-with-slider__col col-md-6 wow fadeInRight" data-wow-delay="1.6s" data-wow-duration="0.6s">
 													<div class="section-with-slider__caption">
 														<div class="section-with-slider__title item-bg__title" v-html="item.title">
 														</div>
@@ -408,37 +385,40 @@
 						</div>
 						<h2 v-html="h2"> </h2>
 					</div>
-					<div class="sCalc__block item-bg">
-						<div class="sCalc__group"> 
-							<div class="sCalc__group-title">Площадь помещения (м2):
-							</div>
-							<div class="sCalc__row row range-block">
-								<div class="sCalc__col col-xxl-7 col-xl-8">
-									<input class="slider-range-js" type="text" data-min="10" data-from="500" data-max="1000"/>
+					<div class="sCalc__block" id="sCalcbgWrap">
+						<div class="item-bg item-bg-animate p-0" id="sCalcbg"></div>
+						<div class="wow fadeIn " data-wow-delay="0.6s" data-wow-duration="0.6s">
+							<div class="sCalc__group"> 
+								<div class="sCalc__group-title">Площадь помещения (м2):
 								</div>
-								<div class="col-xl">
-									<div class="sCalc__total"> Итого: <span class="range-result-js">23000</span> рублей  
+								<div class="sCalc__row row range-block">
+									<div class="sCalc__col col-xxl-7 col-xl-8">
+										<input class="slider-range-js" type="text" data-min="10" data-from="500" data-max="1000"/>
+									</div>
+									<div class="col-xl">
+										<div class="sCalc__total"> Итого: <span class="range-result-js">23000</span> рублей  
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="sCalc__group"> 
-							<div class="sCalc__group-title">Телефон для связи:
-							</div>
-							<div class="sCalc__row row">
-								<div class="sCalc__col col-xxl-7 col-xl-8">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="sCalc__input-wrap form-group"><input class="sCalc__input form-control" type="tel" placeholder="+7 (___) ___-__-__" name="tel"/>
+							<div class="sCalc__group"> 
+								<div class="sCalc__group-title">Телефон для связи:
+								</div>
+								<div class="sCalc__row row">
+									<div class="sCalc__col col-xxl-7 col-xl-8">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="sCalc__input-wrap form-group"><input class="sCalc__input form-control" type="tel" placeholder="+7 (___) ___-__-__" name="tel"/>
+												</div>
+												<!-- +e.input-wrap-->
 											</div>
-											<!-- +e.input-wrap-->
-										</div>
-										<div class="col-md-6"><input class="sCalc__btn" type="submit" value="Отправить заявку"/>
+											<div class="col-md-6"><input class="sCalc__btn" type="submit" value="Отправить заявку"/>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="col-xxl">
-									<div class="sCalc__small">Отправив эту форму, я&nbsp;подтверждаю достоверность информации и&nbsp;согласие с&nbsp;условиями передачи данных.
+									<div class="col-xxl">
+										<div class="sCalc__small">Отправив эту форму, я&nbsp;подтверждаю достоверность информации и&nbsp;согласие с&nbsp;условиями передачи данных.
+										</div>
 									</div>
 								</div>
 							</div>
@@ -469,16 +449,15 @@
 						<div class="section-title__top-title" v-html="subT">
 						</div>
 						<h2 v-html="h2"> </h2>
-						<div class="section-title__foot-title" v-html="footT">
+						<div class="section-title__foot-title" v-html="footT"> 
 						</div>
 					</div>
-					<div class="sCeilings__block item-bg">
+					<div class="sCeilings__block" id="sCeilingsbgWrap">
+						<div class="item-bg item-bg-animate p-0" id="sCeilingsbg"></div>
 						<div class="row">
-							<div class="col-md-6">
-								<div class="sCeilings__img-wrap sCeilings__img-wrap--lg bg-wrap"><img class="img-bg object-fit-js" :src="'img/@2x/' + gal" alt=""/>
-								</div>
+							<div class="col-md-6 wow fadeIn " data-wow-delay="0.6s" data-wow-duration="0.6s"><a class="sCeilings__img-wrap sCeilings__img-wrap--lg bg-wrap" href="#"><img class="img-bg object-fit-js" :src="'img/' + gal" alt=""/></a>
 							</div>
-							<div class="col-md-6 align-self-center">
+							<div class="col-md-6 align-self-center wow fadeIn " data-wow-delay="1.1s" data-wow-duration="0.6s">
 								<div class="sCeilings__caption">
 									<div class="sCeilings__title item-bg__title" v-html="title">
 									</div>
@@ -499,26 +478,29 @@
 						<h2><a :href="tel0" v-html="h2"> </a></h2>
 					</div>
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-6 wow fadeInUp " data-wow-delay="0.6s" data-wow-duration="0.6s">
 							<div class="sContact__map" id="map">
 							</div><script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" ></script>
 						</div>
-						<div class="col-md-6">
-							<div class="sContact__caption item-bg">
-								<div class="sContact__title item-bg__title" v-html="title">
+						<div class="col-md-6"> 
+							<div class="sContact__caption" id="sContactbgWrap">
+								<div class="item-bg item-bg-animate p-0" id="sContactbg"></div>
+								<div class="wow fadeIn " data-wow-delay="0.8s" data-wow-duration="0.6s">
+									<div class="sContact__title item-bg__title" v-html="subT">
+									</div>
+									<p><strong>Адрес:</strong> {{addr}}</p>
+									<p> <strong>Режим работы:</strong> {{timer}}</p><a class="sContact__btn" href="#">
+									<svg class="icon icon-pdf ">
+										<use xlink:href="img/svg/sprite.svg#pdf"></use>
+									</svg>Карточка партнера</a>
 								</div>
-								<p><strong>Адрес:</strong> {{addr}}</p>
-								<p> <strong>Режим работы:</strong> {{timer}}</p><a class="sContact__btn" href="#">
-								<svg class="icon icon-pdf ">
-									<use xlink:href="img/svg/sprite.svg#pdf"></use>
-								</svg>Карточка партнера</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 			<!-- end sContact-->
-			<footer class="footer" id="footer">
+			<footer class="footer wow fadeInUp" id="footer" data-wow-delay="0.15s" data-wow-duration="0.6s">
 				<div class="container">
 					<div class="row">
 						<div class="footer__col col-12 d-md-none"> 
@@ -572,7 +554,11 @@
 		</div><script  src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 		<script src="js/app.js"></script>
 		<script src="js/lazy.js"></script>
-		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/jquery/jquery.min.js"></script><script src="js/TweenMax.min.js"></script>
+<script src="js/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+<script src="js/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+		<script src="libs/wowjs/wow.min.js"></script>
 		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
 		<!-- полифил для picture-->
 		<script src="libs/picturefill/picturefill.min.js"></script>

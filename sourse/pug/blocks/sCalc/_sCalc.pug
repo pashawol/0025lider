@@ -6,39 +6,41 @@ mixin sCalc(c2)
 				+e.top-title(v-html="subT")
 				h2(v-html="h2") 
 				
-			+e.block.item-bg
-				+e.group 
-					+e.group-title Площадь помещения (м2):
-					if c2
-						.row.align-items-center
-							+e.col-auto.col-xl-auto.col-lg-6
-								+input('Введите значение','number')
-							.col
-								.row
-									.col-xl-auto
-										+in-c('radio','С заглаживанием поверхности','radio')
-									.col-xl-auto
-										+in-c('radio','Без заглаживания поверхности','radio')
-							.col-12
-								+e.total  Итого: #[span.range-result-js 23000] рублей 
-					else
-						+e.row.row.range-block
+			+e.block#sCalcbgWrap
+				.item-bg.item-bg-animate.p-0#sCalcbg
+				div( class="wow fadeIn "  data-wow-delay=`${delay}s` data-wow-duration=`${dur }s`   )
+					+e.group 
+						+e.group-title Площадь помещения (м2):
+						if c2
+							.row.align-items-center
+								+e.col-auto.col-xl-auto.col-lg-6
+									+input('Введите значение','number')
+								.col
+									.row
+										.col-xl-auto
+											+in-c('radio','С заглаживанием поверхности','radio')(checked)
+										.col-xl-auto
+											+in-c('radio','Без заглаживания поверхности','radio')
+								.col-12.pb-3.pt-1
+									+e.total  Итого: #[span.range-result-js 23000] рублей 
+						else
+							+e.row.row.range-block
+								+e.col.col-xxl-7.col-xl-8
+										
+										input.slider-range-js(type="text" data-min='10' data-from="500" data-max='1000')
+								.col-xl
+									+e.total  Итого: #[span.range-result-js 23000] рублей  
+					+e.group 
+						+e.group-title Телефон для связи:
+						+e.row.row
 							+e.col.col-xxl-7.col-xl-8
-									
-									input.slider-range-js(type="text" data-min='10' data-from="500" data-max='1000')
-							.col-xl
-								+e.total  Итого: #[span.range-result-js 23000] рублей  
-				+e.group 
-					+e.group-title Телефон для связи:
-					+e.row.row
-						+e.col.col-xxl-7.col-xl-8
-							.row
-								.col-md-6
-									+input('+7 (___) ___-__-__','tel')
-								.col-md-6
-									+e.INPUT.btn(type="submit" value="Отправить заявку")
-						.col-xxl
-							+e.small Отправив эту форму, я&nbsp;подтверждаю достоверность информации и&nbsp;согласие с&nbsp;условиями передачи данных.
+								.row
+									.col-md-6
+										+input('+7 (___) ___-__-__','tel')
+									.col-md-6
+										+e.INPUT.btn(type="submit" value="Отправить заявку")
+							.col-xxl
+								+e.small Отправив эту форму, я&nbsp;подтверждаю достоверность информации и&nbsp;согласие с&nbsp;условиями передачи данных.
 
 
 	// end sCalc
