@@ -156,11 +156,15 @@
 						<h2 v-html="h2"> </h2>
 					</div>
 					<div class="row">
-						<div class="sBenefits__col col-md-6 wow fadeInRight" v-for="item in items" :key="item.title" data-wow-duration="0.6s" data-wow-delay="0.6s">
+						<div class="sBenefits__col col-lg-6 wow fadeInRight" v-for="item in items" :key="item.title" data-wow-duration="0.6s" data-wow-delay="0.6s">
 							<div class="sBenefits__item">
 								<div class="sBenefits__title" v-html="item.title">
 								</div>
-								<p v-html="item.p"></p><img class="res-i" :src="item.img" alt="" :style="item.style"/>
+								<p v-html="item.p"></p>
+								<picture>
+									<source :srcset="'img/@2x/sBenefits-lg-' + item.img + '.png'" media="(min-width: 600px)"/>
+									<source :srcset="'img/@2x/sBenefits-' + item.img + '.png'"/><img class="res-i" :src="'img/@2x/sBenefits-lg-' + item.img + '.png'" alt="" :style="item.style"/>
+								</picture>
 							</div>
 						</div>
 					</div>
@@ -177,25 +181,25 @@
 						items: [
 							{
 								title: `От&nbsp;3&nbsp;дней <br> точно в&nbsp;срок`,
-								p: `Технология и&nbsp;опыт позволяют выполнять объемы до&nbsp;500 м2 &nbsp;точно в&nbsp;срок.`, img: `img/@2x/sBenefits-1.png`,
-								style: 'width: 10.77778rem;'
+								p: `Технология и&nbsp;опыт позволяют выполнять объемы до&nbsp;500 м2 &nbsp;точно в&nbsp;срок.`, img: `1`,
+								style: 'margin-bottom: 0'
 							},
 							{
 								title: `Высокое качество готовой поверхности`,
 								p: `Не&nbsp;требует дальнейшей обработки за&nbsp;счет увеличения адгезии между поверхностью и&nbsp;раствором.`,
-								img: `img/@2x/sBenefits-2.png`
+								img: `2`
 							},
 							{
 								title: `Высокое качество используемого раствора`,
 								p: `За&nbsp;счет механического смешивания компонентов.`,
-								img: `img/@2x/sBenefits-3.png`,
-								style: "right:0; bottom: 2rem; margin-right: 0"
+								img: `3`,
+								style: " margin-right: 0"
 							},
 				
 							{
 								title: "Экономный расход шпаклевочной смеси",
 								p: `А&nbsp;также выгодная цена шпатлевки от&nbsp;130&nbsp;руб/ м2.`,
-								img: `img/@2x/sBenefits-4.png`
+								img: `4`
 							},
 				
 						]

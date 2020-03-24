@@ -119,6 +119,19 @@ var sCasesVue = new Vue({
 	created: function created() {},
 	computed: {}
 });
+var sContactVue = new Vue({
+	el: '#sContact',
+	data: {
+		imgSRc: 'img/',
+		subT: 'Контактная информация',
+		h2: app.tel,
+		tel0: app.gettel,
+		addr: "\u0433. \u041D\u0438\u0436\u043D\u0438\u0439 \u041D\u043E\u0432\u0433\u043E\u0440\u043E\u0434, \u0443\u043B. \u0427\u0435\u0440\u0435\u043F\u0438\u0447\u043D\u0430\u044F, 2\u0410\u043A2",
+		timer: "\u041F\u043D-\u043F\u0442: 8:00-19:00; \u0421\u0431-\u0432\u0441: \u0432\u044B\u0445\u043E\u0434\u043D\u043E\u0439"
+	},
+	created: function created() {},
+	computed: {}
+});
 var sCeilingsVue = new Vue({
 	el: '#sCeilings',
 	data: {
@@ -131,19 +144,6 @@ var sCeilingsVue = new Vue({
 		gal: 'ceiling.jpg'
 	},
 	methods: {},
-	created: function created() {},
-	computed: {}
-});
-var sContactVue = new Vue({
-	el: '#sContact',
-	data: {
-		imgSRc: 'img/',
-		subT: 'Контактная информация',
-		h2: app.tel,
-		tel0: app.gettel,
-		addr: "\u0433. \u041D\u0438\u0436\u043D\u0438\u0439 \u041D\u043E\u0432\u0433\u043E\u0440\u043E\u0434, \u0443\u043B. \u0427\u0435\u0440\u0435\u043F\u0438\u0447\u043D\u0430\u044F, 2\u0410\u043A2",
-		timer: "\u041F\u043D-\u043F\u0442: 8:00-19:00; \u0421\u0431-\u0432\u0441: \u0432\u044B\u0445\u043E\u0434\u043D\u043E\u0439"
-	},
 	created: function created() {},
 	computed: {}
 });

@@ -28,25 +28,33 @@
 
 		text-align: center;
 
+		picture {
+			display: block;
+			padding-bottom: 1px;
+		}
+
 		img {
 			z-index: -1;
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
+			max-height: rem(220);
+			margin-bottom: rem(20);
+			max-width: (320 * 100% / 653);
 
 			@include media-breakpoint-up(md) {
+				width: rem(320);
 				margin-left: 0;
 				margin-right: 0;
 				position: absolute;
 				bottom: 0;
 				right: rem(0);
-				max-width: 40%;
-				max-height: rem(280);
+				margin-bottom: 0;
+				// max-width: 40%;
+				max-height: none;
 			}
 
-			@include media-breakpoint-up(lg) {
-				right: rem(30);
-			}
+
 
 		}
 	}
@@ -58,7 +66,7 @@
 		line-height: 1.36;
 		position: relative;
 
-		@include media-breakpoint-up(xl) {
+		@include media-breakpoint-up(sm) {
 			max-width: rem(340);
 		}
 
@@ -71,8 +79,8 @@
 
 			margin-left: 0;
 
-			max-width: none;
-			max-width: none;
+			// max-width: none;
+			// max-width: none;
 		}
 
 		margin-left: auto;
@@ -104,12 +112,20 @@
 	p {
 
 
-		@include media-breakpoint-up(xll) {
+		@include media-breakpoint-up(xxl) {
 			max-width: rem(340);
-			margin-left: 0;
 
 			// padding-right: rem(200);
 		}
+
+		@include media-breakpoint-up(xll) {
+			max-width: rem(300);
+			margin-left: 0;
+			// margin-left: 0;
+
+			// padding-right: rem(200);
+		}
+
 
 		@include media-breakpoint-up(md) {
 

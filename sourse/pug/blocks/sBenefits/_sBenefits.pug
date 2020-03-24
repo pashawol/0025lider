@@ -6,9 +6,12 @@ mixin sBenefits()
 				+e.top-title(v-html="subT" )
 				h2(v-html="h2") 
 			.row
-				+e.col.col-md-6(v-for="item in items" :key="item.title" class="wow fadeInRight" data-wow-duration=`${dur}s`  data-wow-delay=`${delay}s`)
+				+e.col.col-lg-6(v-for="item in items" :key="item.title" class="wow fadeInRight" data-wow-duration=`${dur}s`  data-wow-delay=`${delay}s`)
 					+e.item
 						+e.title(v-html="item.title")
 						p(v-html="item.p")
-						img.res-i(:src="item.img", alt="" :style="item.style")
+						picture
+							source(:srcset="'img/@2x/sBenefits-lg-' + item.img + '.png'" media="(min-width: 600px)")
+							source(:srcset="'img/@2x/sBenefits-' + item.img + '.png'" )
+							img.res-i(:src="'img/@2x/sBenefits-lg-' + item.img + '.png'", alt="" :style="item.style")
 	// end sBenefits

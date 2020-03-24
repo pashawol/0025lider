@@ -156,11 +156,15 @@
 						<h2 v-html="h2"> </h2>
 					</div>
 					<div class="row">
-						<div class="sBenefits__col col-md-6 wow fadeInRight" v-for="item in items" :key="item.title" data-wow-duration="0.6s" data-wow-delay="0.6s">
+						<div class="sBenefits__col col-lg-6 wow fadeInRight" v-for="item in items" :key="item.title" data-wow-duration="0.6s" data-wow-delay="0.6s">
 							<div class="sBenefits__item">
 								<div class="sBenefits__title" v-html="item.title">
 								</div>
-								<p v-html="item.p"></p><img class="res-i" :src="item.img" alt="" :style="item.style"/>
+								<p v-html="item.p"></p>
+								<picture>
+									<source :srcset="'img/@2x/sBenefits-lg-' + item.img + '.png'" media="(min-width: 600px)"/>
+									<source :srcset="'img/@2x/sBenefits-' + item.img + '.png'"/><img class="res-i" :src="'img/@2x/sBenefits-lg-' + item.img + '.png'" alt="" :style="item.style"/>
+								</picture>
 							</div>
 						</div>
 					</div>
@@ -178,27 +182,26 @@
 							{
 								title: "От&nbsp;3&nbsp;дней <br> точно в&nbsp;срок",
 								p:  `Технология и&nbsp;опыт позволяет выполнять даже большие объекты точно в&nbsp;срок.`, 
-								img: `img/@2x/sBenefits-1.png`,
-								style: 'width: 10.77778rem;'
+								img: `1`,
+								style: " margin-bottom: 0"
 							},
 							{
 								title: `Материалы по&nbsp;лучшей цене`,
 								p:  `Используем материалы только с&nbsp;наилучшим соотношением цены и&nbsp;качества.`,
-								img: `img/@2x/sBenefits-4-2.png`,
-								style: " bottom: 2rem; "
+								img: `4-2`, 	style: " bottom: 2rem; "
 							},
 							{
 								title:  `Качество – Германия!`,
 								p: `Используем борудование немецкого производства. Знаменитое качество!`,
-								img: `img/@2x/sBenefits-2-3.png`, 
-								style: " bottom: 2rem; right: 2rem "
+								img: `2-3`, 
+							 
 							},
 				
 							{
 								title: "Внимание к мелочам",
 								p:`Вне зависимости от&nbsp;сложности, скрупулезный подход к&nbsp;работе и&nbsp;деталям.`,
-								img: `img/@2x/sBenefits-4-4.png`,
-								style: "right:0; bottom: 0;max-width: 50%" 
+								img: `4-4`,
+							 style: " margin-right: 0; margin-bottom: 0"
 							},
 				
 						]

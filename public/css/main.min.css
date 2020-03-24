@@ -5068,11 +5068,19 @@ a {
   text-align: center;
 }
 
+.sBenefits__item picture {
+  display: block;
+  padding-bottom: 1px;
+}
+
 .sBenefits__item img {
   z-index: -1;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-height: 12.22222rem;
+  margin-bottom: 1.11111rem;
+  max-width: 49.00459%;
 }
 
 .sBenefits__title {
@@ -6761,6 +6769,10 @@ a {
     margin-right: .5rem;
   }
 
+  .sBenefits__title {
+    max-width: 18.88889rem;
+  }
+
   .sCalc__block {
     padding: 2.38889rem 2.5rem;
   }
@@ -7693,18 +7705,18 @@ a {
   }
 
   .sBenefits__item img {
+    width: 17.77778rem;
     margin-left: 0;
     margin-right: 0;
     position: absolute;
     bottom: 0;
     right: 0;
-    max-width: 40%;
-    max-height: 15.55556rem;
+    margin-bottom: 0;
+    max-height: none;
   }
 
   .sBenefits__title {
     margin-left: 0;
-    max-width: none;
   }
 
   .sBenefits__title:before {
@@ -8683,10 +8695,6 @@ a {
     visibility: hidden;
   }
 
-  .sBenefits__item img {
-    right: 1.66667rem;
-  }
-
   .sCeilings__caption {
     padding: 3.33333rem 0 2.22222rem;
   }
@@ -9601,10 +9609,6 @@ a {
     height: 4.44444rem;
   }
 
-  .sBenefits__title {
-    max-width: 18.88889rem;
-  }
-
   .sCalc__col {
     flex: 0 0 53.5%;
     max-width: 53.5%;
@@ -10464,7 +10468,7 @@ a {
   }
 
   .sBenefits p {
-    max-width: 18.88889rem;
+    max-width: 16.66667rem;
     margin-left: 0;
   }
 
@@ -11384,6 +11388,10 @@ a {
     padding: 2.22222rem 2.5rem 0;
   }
 
+  .sBenefits p {
+    max-width: 18.88889rem;
+  }
+
   .sCalc__block {
     padding: 4.61111rem 5.44444rem;
   }
@@ -11633,6 +11641,10 @@ a {
 }
 
 @media (max-width:575.98px) {
+  .item-bg-animate {
+    left: 0!important;
+  }
+
   .aside {
     margin-bottom: 0;
   }
