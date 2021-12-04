@@ -41,23 +41,23 @@ $output-bourbon-deprecation-warnings: false;
 @import "./node_modules/bootstrap/scss/breadcrumb";
 .breadcrumb-wrap{
   z-index: 1200;
-  flex-wrap: nowrap;
-    @include media-breakpoint-up(xl) {
-      .swiper-wrapper{
-        transform: none !important;
-      }
-      margin-top: calc(-1 * var(--btn-s));
-      // margin-top: -68px;
-      height: var(--btn-s);
-      max-width: calc(100% - #{rem(350)});
-      // margin-top: 0;
-    } 
-    margin-top: rem(40);
+  @include media-breakpoint-up(xl) {
+    .swiper-wrapper{
+      transform: none !important;
+    }
+    margin-top: calc(-1 * var(--btn-s));
+    // margin-top: -68px;
+    height: var(--btn-s);
+    max-width: calc(100% - #{rem(350)});
+    // margin-top: 0;
+  } 
+  margin-top: rem(40);
   margin-bottom: rem(35);
-
+  
   position: relative;
 }
 .breadcrumb{
+  flex-wrap: nowrap;
   align-items: center;
   a{
     font-size: rem(18);
