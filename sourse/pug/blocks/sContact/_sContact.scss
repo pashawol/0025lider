@@ -15,6 +15,7 @@
 		flex-direction: column;
 		justify-content: center;
 
+		position: relative;
 		@include media-breakpoint-up(xxl) {
 			padding: rem(80) rem(40) rem(40) rem(100);
 		}

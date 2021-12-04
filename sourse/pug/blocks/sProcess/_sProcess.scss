@@ -1,6 +1,9 @@
 // start .sProcess
 .sProcess {
-
+padding-bottom: 0;
+ .section-title {
+  margin-bottom: 1.11111rem;
+}
 	&__col {
 		margin-bottom: rem(67);
 	}
@@ -103,6 +106,7 @@
 	@include media-breakpoint-down(lg) {}
 
 	@include media-breakpoint-down(md) {
+		padding-bottom: 0;
 		text-align: center;
 
 		&__img-wrap {
@@ -118,7 +122,11 @@
 
 	@include media-breakpoint-down(sm) {}
 
-	@include media-breakpoint-down(xs) {}
+	@include media-breakpoint-down(xs) {
+		&__col:last-child {
+    margin-bottom: 0;
+  }
+	}
 
 }
 

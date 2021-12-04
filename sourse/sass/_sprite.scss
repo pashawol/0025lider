@@ -1,0 +1,53 @@
+@use "sass:math";
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+.icon-area {
+	font-size:math.div(500,10)*1rem;
+	width: math.div(500,500)*1em;
+}
+.icon-arrow-down {
+	font-size:math.div(31.5,10)*1rem;
+	width: math.div(31.5,31.5)*1em;
+}
+.icon-builder {
+	font-size:math.div(441.6,10)*1rem;
+	width: math.div(441.6,441.6)*1em;
+}
+.icon-check {
+	font-size:math.div(27,10)*1rem;
+	width: math.div(27,27)*1em;
+}
+.icon-event {
+	font-size:math.div(433.6,10)*1rem;
+	width: math.div(433.6,433.6)*1em;
+}
+.icon-fb {
+	font-size:math.div(500,10)*1rem;
+	width: math.div(500,500)*1em;
+}
+.icon-instagram {
+	font-size:math.div(500,10)*1rem;
+	width: math.div(500,500)*1em;
+}
+.icon-left-arrow {
+	font-size:math.div(31.49,10)*1rem;
+	width: math.div(31.49,31.49)*1em;
+}
+.icon-pdf {
+	font-size:math.div(500,10)*1rem;
+	width: math.div(500,500)*1em;
+}
+.icon-phone-call {
+	font-size:math.div(473.81,10)*1rem;
+	width: math.div(473.81,473.81)*1em;
+}
+.icon-vk {
+	font-size:math.div(500,10)*1rem;
+	width: math.div(500,500)*1em;
+}

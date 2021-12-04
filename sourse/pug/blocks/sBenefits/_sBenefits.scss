@@ -1,7 +1,13 @@
 // start .sBenefits
+@use "sass:math";
+
 .sBenefits {
 	&__col {
-		margin-bottom: 30px;
+		margin-bottom: 10px;
+		@include media-breakpoint-up(md) {
+			margin-bottom: 30px;
+
+		}
 	}
 
 	&__item {
@@ -13,10 +19,12 @@
 		@include media-breakpoint-up(md) {
 
 			padding: rem(30) rem(35) rem(0);
+			 min-height: 14.72222rem;
 		}
 
 		padding-top: rem(30);
-		min-height: rem(265);
+		// min-height: rem(265);
+		min-height: 22.5rem;
 		height: 100%;
 
 		@extend .item-bg;
@@ -40,7 +48,7 @@
 			margin-right: auto;
 			max-height: rem(220);
 			margin-bottom: rem(20);
-			max-width: (320 * 100% / 653);
+			max-width: math.div(320 * 100%, 653);
 
 			@include media-breakpoint-up(md) {
 				width: rem(320);

@@ -14,10 +14,10 @@ mixin icon(name,mod)
 
 //- breadcrumb
 mixin breadcrumb(...items)
-	nav(aria-label="breadcrumb" )
-		ol.breadcrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
+	nav(aria-label="breadcrumb" ).swiper-slider.breadcrumb-wrap
+		ol.breadcrumb.swiper-wrapper(itemscope itemtype="http://schema.org/BreadcrumbList")
 			-for (var i = 0; i < items.length; i++)
-				li.breadcrumb-item( class=(i == items.length - 1 ? "active" : '')   itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
+				li.breadcrumb-item.swiper-slide( class=(i == items.length - 1 ? "active" : '')   itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
 					a(href=(i == 0 ? "/" : '#') itemprop="item" )
 						span( itemprop="name")= items[i]
 						meta(itemprop="position" content= (i + 1) )
@@ -36,20 +36,14 @@ mixin pugin()
 						block
 			+li()
 				span.prev.page-numbers( )
-					img(src="img/svg/prev.svg", alt="")
-			+li()
-				span.prev.page-numbers( )
-					img(src="img/svg/prev-double.svg", alt="")
+					img(src="img/prev.svg", alt="") 
 			+li()
 				span.page-numbers.current  1
 			- for (var x = 1; x < 5; x++)
 				+li(x)
 			+li()
 				a.next.page-numbers(href='#')
-					img(src="img/svg/next.svg", alt="")
-			+li()
-				a.next.page-numbers(href='#')
-					img(src="img/svg/next-double.svg", alt="")
+					img(src="img/next.svg", alt="")
 //- +pugin()
 //- /pugination
 //- h2.yel(class="  wow fadeInUp animated " data-wow-offset="120" data-wow-duration="1.2s")  
@@ -100,13 +94,13 @@ mixin mnu()
 mixin mnu()
 	-
 		var nav= {
-			"Главная":"/",
 			"Услуги  ":"#",
 			"Подбор септика   ":"#",
 			"Акции ":"#"," О компании  ":"#",
 			" Доставка и оплата ":"#",
 			" Клиентам  ":"#",
 			" Наши работы   ":"#",
+			"Блог":"#",
 			"Контакты ":"#"
 			}
 	+e.UL.nav(itemscope itemtype="http://schema.org/SiteNavigationElement")

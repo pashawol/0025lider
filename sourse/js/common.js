@@ -245,6 +245,11 @@ function eventHandler() {
 		return false;
 	});
 
+	const brJs = new Swiper('[aria-label="breadcrumb"]', {
+		slidesPerView: 'auto', 
+		spaceBetween: 0, 
+		freeMode: true,
+	});
 
 	$(".slider-js ").each(function () {
 		let th = $(this);
@@ -287,7 +292,7 @@ function eventHandler() {
 		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
 
 	}
-
+	if ($("#map")) {
 	ymaps.ready(function () {
 		var myMap = new ymaps.Map('map', {
 			center: [56.24491006850043, 43.99628449999994],
@@ -315,6 +320,7 @@ function eventHandler() {
 		myMap.geoObjects
 			.add(myPlacemark);
 	});
+	}
 
 
 
@@ -326,7 +332,7 @@ function eventHandler() {
 		topMenuHeight = 40,
 		// topMenuHeight = topMenu.outerHeight()+15,
 		// All list items
-		menuItems = topMenu.find("a"),
+		menuItems = topMenu.find('a[href^="#"'),
 		// Anchors corresponding to menu items
 		scrollItems = menuItems.map(function () {
 			var item = $($(this).attr("href"));

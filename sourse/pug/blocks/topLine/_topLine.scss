@@ -76,14 +76,18 @@
 	&__btn {
 		@extend .btn;
 		padding: 0;
-		width: rem(68px);
-		height: rem(68px);
+		width: var(--btn-s);
+		height: var(--btn-s);
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
+		
 		.icon {
-			font-size: rem(20);
+			@include media-breakpoint-up(sm) {
+				font-size: 1.11111rem;
+			}
+			// font-size: rem(20);
+			font-size: 2.11111rem;
 		}
 
 		@include media-breakpoint-down(xs) {
@@ -96,7 +100,8 @@
 				color: #ffffff !important;
 				background-color: #3d4148 !important;
 				border-color: #3d4148 !important;
-
+				transition: all .36s;
+    transform: translateY(150%);
 				.icon {
 					margin-right: rem(10);
 					color: $primary !important;
@@ -122,7 +127,7 @@
 	}
 
 	&__link--tel {
-		@extend .text-body;
+		@extend .text-body !optional;;
 		position: relative;
 		padding-left: rem(16);
 

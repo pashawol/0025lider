@@ -5,12 +5,12 @@ let topLineVue = new Vue({
 		email: app.email,
 		tel: app.tel,
 		menus: [
-			{ title: "Главная", url: "#headerBlock" },
 			{ title: "Ваши выгоды", url: "#sBenefits" },
 			{ title: "Оборудование", url: "#sEquipment" },
 			{ title: "Материалы", url: "#sMaterials" },
 			{ title: "Проекты", url: "#sCases" },
 			{ title: "Калькулятор", url: "#sCalc" },
+			{ title: "Блог", url: "/" },
 			{ title: "Контакты", url: "#sContact" },
 		],
 		socs: app.socs,

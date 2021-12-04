@@ -1,0 +1,68 @@
+
+	// start .sArticals
+	.sArticals {
+		padding-top: 0 !important;
+		&__col{
+
+			margin-bottom: 40px;
+		}
+		&__item{
+			img{
+				margin-bottom: rem(20);
+			}
+			display: flex;
+			flex-direction: column;
+			min-height: calc(100%);
+			position: relative;
+		}
+		&__title{
+				font-size: rem(20);
+				font-weight: bold;
+				margin-bottom: .5rem;
+				line-height: calc(25 / 20);
+		}
+		&__footer{
+			margin-top: auto;
+		}
+		 &__btn{
+			 @extend .btn, .btn-primary;
+			 width: rem(145);
+			 height: rem(45px);
+			 display: flex;
+			 justify-content: center;
+			 align-items: center;
+			 padding: 0;
+			 &::before{
+				 content: '';
+				 position: absolute;
+				 left: 0;
+				 top: 0;
+				 bottom: 0;
+				 right: 0;
+			 }
+		 }
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sArticals

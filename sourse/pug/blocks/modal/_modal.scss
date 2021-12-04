@@ -4,12 +4,15 @@
   box-shadow: 0 10px 30px rgba(32, 22, 0, 0.2);
   max-width: rem(555);
   width: 100%;
-
+  
   p {
     margin-left: auto;
     margin-right: auto;
-    max-width: rem(340);
   }
+  .text-center p {
+    // max-width: 18.88889rem;
+    max-width: rem(340);
+}
 
   @include media-breakpoint-up(md) {
     padding: rem(44px);

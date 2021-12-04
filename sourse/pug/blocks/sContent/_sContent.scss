@@ -1,7 +1,49 @@
 
 	// start .sContent
 	.sContent {
-		 
+		 &__body{
+			 * {
+				 margin-bottom: rem(20);
+			 }
+			 img{
+				 margin-bottom: rem(40);
+			 }
+		 }
+		&__footer{
+			margin-top: rem(40);
+			padding-top: rem(40);
+			padding-bottom: rem(40);
+			border-top: 1px solid #E8E8E8;
+			border-bottom: 1px solid #E8E8E8;
+			.row{
+				align-items: center;
+				@include roww(15);
+			}
+
+		}
+		ol{
+			counter-reset: num;
+			list-style: none;
+			padding-left: 0;
+			margin-left: 0;
+			li{
+
+				&::before {
+					content: '0'counter(num)'.';
+					counter-increment: num;
+					font-weight: bold;
+					color: $primary;
+				}
+ 		}
+		}
+		ul{
+			padding-left: rem(20);
+			li{
+				&::marker{
+					color: $primary;
+				}
+			}
+		}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -26,4 +68,12 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
+	.ya-share2__container_size_l .ya-share2__badge .ya-share2__icon{
+		width: 30px;
+		height: 30px;
+	}
+	.ya-share2__container_shape_round.ya-share2__container_size_l .ya-share2__badge .ya-share2__icon:not(.ya-share2__icon_messenger-contact):not(.ya-share2__icon_more):not(.ya-share2__icon_copy) {
+		
+		background-size: 90%;
+	}
 } // end.sContent
